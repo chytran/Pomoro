@@ -1,5 +1,5 @@
 <?php
 
-require_once '../app/init.php';
+    require('models/database.inc.php');
 
-$app = new App;
+?>
