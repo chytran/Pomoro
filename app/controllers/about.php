@@ -1,6 +1,6 @@
 <?php
 
-Class About
+Class About extends controller
 {
     function index()
     {
