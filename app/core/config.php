@@ -23,4 +23,3 @@ define('ROOT', str_replace("app/core", "public/assets", $path)); // path to asse
 
 // Set true to allow error reporting, set false when uploading online to stop error reporting\
 define('DEBUG', true);
-// New Comment
