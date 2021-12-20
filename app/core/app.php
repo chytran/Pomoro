@@ -1,7 +1,12 @@
 <?php
 
 class App
-{
+{   
+    // url/$controller/$method/params
+    private $controller = "home"; // go to controllers/home.php
+    private $method = "index"; // default method
+    private $params = []; // store extra params
+
     public function __construct()
     {
         // $this->splitURL();
