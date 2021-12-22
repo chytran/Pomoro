@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['title_page'] ?></title>
     <!--============ CSS ============-->
-    <link rel="stylesheet" href="<?=ASSETS?>pomoro/css/style.css">
+    <link rel="stylesheet" href="<?=ASSETS?>pomoro/css/output.css">
 
     <!--============ POPPINS ============-->
 
 </head>
 <body>
     <!--============ Navbar ============-->
-    <nav class="mx-auto">
+    <nav class="mx-auto bg-black">
         hi
     </nav>
     <!--============ Content ============-->
