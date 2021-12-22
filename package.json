@@ -1,0 +1,22 @@
+{
+  "name": "pomoro",
+  "version": "1.0.0",
+  "description": "Pomora is a banking system in which users are able to perform regular schedule transactions and daily check ups if needed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chytran/Pomoro.git"
+  },
+  "author": "Kevin Tran, Matthew Razo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chytran/Pomoro/issues"
+  },
+  "homepage": "https://github.com/chytran/Pomoro#readme",
+  "dependencies": {
+    "tailwindcss": "^3.0.7"
+  }
+}
