@@ -18,8 +18,8 @@ define("PROTOCAL", 'http');
 $path = str_replace('\\', '/', PROTOCAL . "://" . $_SERVER['SERVER_NAME'] . __DIR__ . "/");
 $path = str_replace($_SERVER['DOCUMENT_ROOT'], "", $path);
 
-define('ROOT1', str_replace("app/core", "public", $path)); // path to public folder
-define('ROOT2', str_replace("app/core", "public/assets", $path)); // path to asset folder in public
+define('ROOT', str_replace("app/core", "public", $path)); // path to public folder
+define('ASSETS', str_replace("app/core", "public/assets", $path)); // path to asset folder in public
 
 // Set true to allow error reporting, set false when uploading online to stop error reporting\
 define('DEBUG', true);

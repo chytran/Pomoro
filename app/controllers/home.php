@@ -5,7 +5,7 @@ class Home extends Controller
     function index()
     {
         $DB = new Database();
-        $DB->connect();
+        $DB->db_connect();
         $this->view("home");
     }
     

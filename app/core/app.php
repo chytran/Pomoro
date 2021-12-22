@@ -12,12 +12,11 @@ class App
         // $this->splitURL();
         // echo "hello";
         $url = $this->splitURL();
-        // print_r($url); 
 
-        if(file_exists("../app/controllers/" . strtolower($url[0]) . ".php")) // if file in controller exist
+        if(file_exists("../app/controllers/" . strtolower($url[0]) . ".php" )) // if home exist
         {
-            $this->controller = strtolower($url[0]); // set controller variable to what the 1st param is in url
-            unset($url[0]); //unset itself from the array
+            $this->controller = strtolower($url[0]); // set controller name to the url at index 0
+            unset($url[0]); // unset
         }
 
         require "../app/controllers/" . $this->controller . ".php";
@@ -34,14 +33,16 @@ class App
 
         // run the class and method together
         $this->params = array_values($url);
-        show($this->params);
-        // call_user_func_array([$this->controller, $this->method],$this->param);
+        call_user_func_array([$this->controller, $this->method],$this->params);
+        // show($this->params);
+        
     }
 
     
 
     private function splitURL()
     {
-        return explode("/", filter_var(trim($_GET['url'], "/"), FILTER_SANITIZE_URL));
+        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+        return explode('/', filter_var(trim($url, "/"), FILTER_SANITIZE_URL));
     }
 }
