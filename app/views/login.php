@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        
     </div>
+    <script src="<?=ASSETS ?>"></script>
 </body>
 </html>
