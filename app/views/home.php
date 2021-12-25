@@ -82,10 +82,14 @@
     </header>
 
     <!--==================== MAIN  ====================-->
+    <main id="main">
 
+    </main>
 
     <!--==================== FOOTER  ====================-->
-
+    <footer id="footer">
+        
+    </footer>
 
     <!--==================== HEADER  ====================-->
     <script src="<?=ASSETS ?>/pomoro/javascript/main.js"></script>
