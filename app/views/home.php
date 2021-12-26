@@ -83,12 +83,15 @@
 
     <!--==================== MAIN  ====================-->
     <main id="main">
+        <div id="container">
 
+        </div>
     </main>
 
     <!--==================== FOOTER  ====================-->
     <footer id="footer">
-        
+        <div id="social-media"></div>
+        <div id="description-footer"></div>
     </footer>
 
     <!--==================== HEADER  ====================-->
