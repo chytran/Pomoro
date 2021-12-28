@@ -57,7 +57,7 @@
                         </div>     
                         <div id="signup-container">                        
                             <span class="opacity-90 text-sm sm:text-xs" style="font-family: Poppins, sans-serif;">Don't have an account?</span>
-                            <a class="font-semibold text-base underline transition duration-200 ease-in sm:text-sm hover:opacity-80" style="font-family: Poppins, sans-serif;" href="#">Sign Up</a>
+                            <a class="font-semibold text-base underline transition duration-200 ease-in sm:text-sm hover:opacity-80" style="font-family: Poppins, sans-serif;" href="signup">Sign Up</a>
                         </div>   
                     </div>
                 </div>
