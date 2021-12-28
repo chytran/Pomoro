@@ -1,1 +1,7 @@
-This is 404 error
+<?php
+    require_once '../app/components/header.php';
+?>
+
+
+</body>
+</html>
