@@ -17,6 +17,7 @@ Class Controller
         if(file_exists("../app/models/". $model . ".php"))
         {
             include "../app/models/" . $model . ".php";
+            print_r("I am here");
         }else{
             include "../app/views/404.php";
         }

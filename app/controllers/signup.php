@@ -13,7 +13,8 @@ Class Signup extends Controller
                 print_r("I am an array");
                 if(!$_POST == null) {
                     $user = $this->loadModel("user");
-                    $user->signup($_POST);
+                    $userTime = new User;
+                    $userTime->signup($_POST);
                 }
             }
             

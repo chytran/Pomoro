@@ -2,6 +2,7 @@
 
 Class User
 {
+
     function login($POST)
     {
         $DB = new Database();
