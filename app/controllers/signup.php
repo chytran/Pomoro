@@ -11,9 +11,12 @@ Class Signup extends Controller
             if(is_array($_POST)) {
                 var_dump($_POST);
                 print_r("I am an array");
+                if(!$_POST == null) {
+                    $user = $this->loadModel("user");
+                    $user->signup($_POST);
+                }
             }
-            $user = $this->loadModel("user");
-            $user->signup($_POST);
+            
             
             
         } else if(isset($_POST['username']) && !isset($_POST['email'])) {

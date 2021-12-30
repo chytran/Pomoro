@@ -31,6 +31,7 @@ Class User
 
     function signup($POST)
     {
+        // print("I Am here");
         $DB = new Database();
 
         $_SESSION['error'] = "";
