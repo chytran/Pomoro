@@ -35,7 +35,7 @@
                     </div> 
                 </div>
                 <!--============ Right Side============-->
-                <form action="functionality.php" method="POST" class="w-100%">
+                <form method="POST" class="w-100%">
                     <div id="right" class="bg-grey-50 z-10 flex items-center justify-center h-full">
                         <div id="right-container" class="w-4/5 h-4/5 grid grid-cols-1 justify-center gap-1 place-items-center border-black z-15 ">
                             <div id="login-title-container" class="w-4/5 text-left -mb-4 pl-3 sm:-ml-4">
@@ -53,12 +53,12 @@
                                 <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-1/6 font-medium sm:ml-2 sm:text-xs sm:w-4/6 md:text-sm md:w-3/6 md:-ml-2 lg:w-2/6 lg:-ml-3 lg:text-xs">PASSWORD</span>
                                 <input name="password" type="password" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
                             </div>
-                            <div id="checkbox" class="-mt-6 w-4/5 relative text-left pl-2 mb-5 sm:-ml-4">
+                            <!-- <div id="checkbox" class="-mt-6 w-4/5 relative text-left pl-2 mb-5 sm:-ml-4">
                                 <input name="confirmation" value="confirmed" type="radio">
                                 <span class="pl-2 opacity-90 text-sm" style="font-family: Poppins, sans-serif;">I accept the registration</span>
-                            </div>   
+                            </div>    -->
                             <div id="button-container-login" class="w-4/5 text-center -mt-4">
-                                <button type="submit" id="sign-in" class="w-32 h-10 rounded-3xl bg-red-500 text-white hover:opacity-70 transition duration-200 ease-in cursor-pointer">Sign up</button>
+                                <button id="sign-in" class="w-32 h-10 rounded-3xl bg-red-500 text-white hover:opacity-70 transition duration-200 ease-in cursor-pointer">Sign up</button>
                             </div>     
                             <div id="signup-container">                        
                                 <span class="opacity-90 text-sm sm:text-xs" style="font-family: Poppins, sans-serif;">Don't have an account?</span>

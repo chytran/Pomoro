@@ -8,8 +8,14 @@ Class Signup extends Controller
         
         if(isset($_POST['email']))
         {
+            if(is_array($_POST)) {
+                var_dump($_POST);
+                print_r("I am an array");
+            }
             $user = $this->loadModel("user");
             $user->signup($_POST);
+            
+            
         } else if(isset($_POST['username']) && !isset($_POST['email'])) {
             $user = $this->loadModel("user");
             $user->login($_POST);

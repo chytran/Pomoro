@@ -18,7 +18,7 @@ Class Controller
         {
             include "../app/models/" . $model . ".php";
         }else{
-            include "../app/models/404.php";
+            include "../app/views/404.php";
         }
     }
 }
