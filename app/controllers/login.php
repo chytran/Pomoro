@@ -11,10 +11,12 @@ Class Login extends Controller
         if(isset($_POST['email']))
         {
             $user = $this->loadModel("user");
-            $user->signup($_POST);
+            $userTime = new User;
+            $userTime->signup($_POST);
         } else if(isset($_POST['username']) && !isset($_POST['email'])) {
             $user = $this->loadModel("user");
-            $user->login($_POST);
+            $userTime = new User;
+            $userTime->login($_POST);
         }
 
         $this->view("login", $data);
