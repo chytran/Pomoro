@@ -36,6 +36,7 @@
                 </div>
                 <!--============ Right Side============-->
                 <form method="POST" class="w-100%">
+                    <?php check_message(); ?>
                     <div id="right" class="bg-grey-50 z-10 flex items-center justify-center">
                         <div id="right-container" class="w-4/5 h-4/5 grid grid-cols-1 justify-center gap-1 place-items-center border-black z-15 ">
                             <div id="login-title-container" class="w-4/5 text-left -mb-4 pl-3 sm:-ml-4">
@@ -43,11 +44,11 @@
                             </div>
                             <div id="username" class="w-4/5 text-center flex ">
                                 <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-4 lg:text-xs">USERNAME</span>
-                                <input type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none">
+                                <input name="username" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none">
                             </div>
                             <div id="password" class="w-4/5 text-center flex">
                                 <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium -ml-2 sm:-ml-0 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-3 lg:text-xs">PASSWORD</span>
-                                <input type="password" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
+                                <input name="password" type="password" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
                             </div>
                             <div id="checkbox" class="-mt-6 w-4/5 relative text-left pl-2 mb-5 sm:-ml-4">
                                 <input type="radio">
