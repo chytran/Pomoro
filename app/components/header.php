@@ -55,6 +55,9 @@
             <div id="nav-menu" class="fixed bg-grey-50 -top-full left-0 w-full pt-12 rounded-bl-3xl rounded-br-3xl shadow-md" style="transition:0.4s;">
                 <ul id="nav-list" class="flex flex-col items-center gap-y-6">
                     <li id="nav-item">
+                        <h1>Hello <?= $_SESSION['user_name']; ?></h1>
+                    </li>
+                    <li id="nav-item">
                         <a href="home" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Home</a>
                     </li>
                     <li id="nav-item">
