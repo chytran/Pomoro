@@ -42,6 +42,9 @@ Class User
             $arr['username'] = $POST['username']; // run if value is in array and isset
             $arr['password'] = $POST['password'];
             $arr['email'] = $POST['email'];
+            $arr['url_address'] = get_random_string_max(60);
+            $arr['date'] = date("Y-m-d H:i:s");
+            
             $query = "INSERT INTO users (username, password, email) values (:username, :password, :email)";
             $data = $DB->write($query,$arr);
             if($data) 
