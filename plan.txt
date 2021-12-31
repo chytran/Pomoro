@@ -1,0 +1,18 @@
+--- Matthew Razo ---
+-About.php --
+-404.php 
+-signout.php (You have signed out) (button that takes you to home)
+
+--- Kevin Tran ---
+-login.php
+-signup.php
+-signout.php
+
+
+-home.php
+
+-account.php (Shows how much money and options to what to do with the money)
+
+-transfer.php (Withdraws and deposits)
+-fundTransfer.php (debit card to credit card)
+-history.php (sql table)(if this email, add another row with a message with that email)

@@ -6,9 +6,9 @@ Class About extends Controller
     {
         $DB = new Database();
         $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
-        $data['title_page'] = 'Pomoro - Home';
+        $data['title_page'] = 'Pomoro - About';
         
-        $this->view("home", $data);
+        $this->view("about", $data);
     }
 
 }
