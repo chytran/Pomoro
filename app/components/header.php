@@ -67,7 +67,11 @@
                         <a href="account" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Account</a>
                     </li>
                     <li id="nav-item">
-                        <a href="login" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Login</a>
+                        <?php if(!isset($_SESSION['username'])): ?>
+                            <a href="logout" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Logout</a>
+                        <?php else: ?>
+                            <a href="login" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Login</a>
+                        <?php endif; ?>
                     </li>
                 </ul>
 

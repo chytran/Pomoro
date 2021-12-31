@@ -81,4 +81,14 @@ Class User
         }
         return false;
     }
+
+    function logout()
+    {
+        // logged out
+        unset($_SESSION['user_name']);
+        unset($_SESSION['url_url']);
+
+        header("location:" . ROOT . "login");
+        die;
+    }
 }
