@@ -42,6 +42,9 @@
         color: transparent;
         transition: 0.4s;
     }
+    .transitioning {
+        transition: width 2s, height 2s, transform 2s;
+    }
 </style>
 <body>
    <!--==================== HEADER  ====================-->
@@ -90,8 +93,8 @@
                 </div>
             </div>
             <!-- mobile menu -->
-            <div class="hidden md:hidden mobile-menu transition duration-200 ease-in">
-                <ul class="">
+            <div class="hidden md:hidden mobile-menu">
+                <ul class="" style="transition:0.4s;">
                     <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-red-500 font-semibold">Home</a></li>
                     <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Business</a></li>
                     <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Impact</a></li>
@@ -104,6 +107,7 @@
 
                 btn.addEventListener("click", () => {
                     menu.classList.toggle("hidden");
+                    menu.classList.add("transitioning");
                 });
             </script>
         </nav>
