@@ -70,8 +70,13 @@
                     </div>
                     <!-- Secondary Navbar items -->
                     <div class="hidden md:flex items-center space-x-3 ">
-                        <a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-redred-500 hover:text-red-500 transition duration-300">Log In</a>
-                        <a href="" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Sign Up</a>
+                        <?php if(isset($_SESSION['user_name'])): ?>
+                            <h1 class="py-2 px-2 font-medium text-gray-600 rounded transition duration-300">Hello, <?= $_SESSION['user_name'] ?></h1>
+                        <?php else: ?>
+
+                        <?php endif; ?>
+                        <a href="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-redred-500 hover:text-red-500 transition duration-300">Log In</a>
+                        <a href="signup" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Sign Up</a>
                     </div>
                     
                     <!-- Mobile menu button -->
@@ -93,7 +98,7 @@
                 </div>
             </div>
             <!-- mobile menu -->
-            <div class="hidden md:hidden mobile-menu">
+            <div class="opacity-0 hidden md:hidden mobile-menu" style="transition: all 1s ease-in">
                 <ul class="" style="transition:0.4s;">
                     <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-red-500 font-semibold">Home</a></li>
                     <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Business</a></li>
@@ -107,7 +112,10 @@
 
                 btn.addEventListener("click", () => {
                     menu.classList.toggle("hidden");
-                    menu.classList.add("transitioning");
+                    menu.classList.add("opacity-100");
+                    menu.classList.add("duration-200");
+                    menu.classList.add("transition");
+                    menu.classList.add("ease-linear")
                 });
             </script>
         </nav>
