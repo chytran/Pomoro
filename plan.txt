@@ -1,7 +1,7 @@
 --- Matthew Razo ---
 -About.php --
--404.php 
--signout.php (You have signed out) (button that takes you to home)
+-404.php- 
+-footer.php-
 
 --- Kevin Tran ---
 -signout.php
