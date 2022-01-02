@@ -4,14 +4,12 @@
 -signout.php (You have signed out) (button that takes you to home)
 
 --- Kevin Tran ---
--login.php
--signup.php
 -signout.php
 
-
--home.php
+-home.php (1st: Link to account, 2nd: Advertisement,3rd: About,4th: footer)
 
 -account.php (Shows how much money and options to what to do with the money)
+-new database table construction (account)
 
 -transfer.php (Withdraws and deposits)
 -fundTransfer.php (debit card to credit card)
