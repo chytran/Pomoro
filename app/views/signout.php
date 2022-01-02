@@ -90,8 +90,8 @@
 
 		<div id="left" class="grid place-items-center h-screen absolute w-full">
                     <div class="bg-white relative w-6/12 h-3/6 object-cover">
-                        <div class="text-red-500 text-6xl left-44 absolute">Oops! Page not found</div>
-						<div class="text-red-500 text-2xl top-24 left-4 absolute text-center">The page you're looking for doesn't exist, or an error has occurred. Go back, or try refreshing your page.</div>
+                        <div class="text-red-500 text-6xl left-16 absolute text-center">You've been successfully signed out</div>
+						<div class="text-red-500 text-1xl top-32 left-96 absolute">You'll be redirected back shortly.</div>
                     </div>
                 </div>
 
