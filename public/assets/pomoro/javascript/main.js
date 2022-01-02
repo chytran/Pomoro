@@ -1,5 +1,5 @@
-const navMenu = document.getElementById("nav-menu");
-const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu"); // menu
+const navToggle = document.getElementById("nav-toggle"); // toggle
 const navClose = document.getElementById("nav-close");
 const navToggleBtn = document.getElementById("nav-toggle-button");
 // Show menu
@@ -16,3 +16,5 @@ if(navClose) {
         navToggleBtn.classList.remove('release');
     })
 }
+
+[]

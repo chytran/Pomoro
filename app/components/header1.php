@@ -115,7 +115,7 @@
                     menu.classList.add("opacity-100");
                     menu.classList.add("duration-200");
                     menu.classList.add("transition");
-                    menu.classList.add("ease-linear")
+                    menu.classList.add("ease-linear");
                 });
             </script>
         </nav>

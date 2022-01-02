@@ -58,7 +58,7 @@
                         <?php if(isset($_SESSION['user_name'])): ?>
                             <h1>Hello <?= $_SESSION['user_name'] ?></h1>
                         <?php else: ?>
-
+                            <!-- Show nothing -->
                         <?php endif; ?>
                     </li>
                     <li id="nav-item">
