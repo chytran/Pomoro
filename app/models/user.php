@@ -88,7 +88,7 @@ Class User
         unset($_SESSION['user_name']);
         unset($_SESSION['url_url']);
 
-        header("location:" . ROOT . "login");
+        header("location:" . ROOT . "signout");
         die;
     }
 }
