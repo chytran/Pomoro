@@ -4,8 +4,11 @@
 
     <!--==================== MAIN  ====================-->
     <main id="main">
-        <div id="container">
-
+        <div id="account" class="h-screen w-full bg-black">
+        <!-- Link to account -->
+        </div>
+        <div id="advertisement" class="h-screen w-full bg-red-300">
+        <!-- Advertisement -->
         </div>
     </main>
 
