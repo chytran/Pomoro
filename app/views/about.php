@@ -35,6 +35,7 @@
                     </div>--->
                 </div>
 
+                <script src="<?=ASSETS ?>/pomoro/javascript/main.js"></script>
 
 </body>
 </html>
