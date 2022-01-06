@@ -29,10 +29,10 @@
    <!--==================== HEADER  ====================-->
    <header id="header" class="w-full fixed top-0 left-0 z-20">
         <nav class="bg-white shadow-lg" style="transition:0.3s;">
-            <div class="max-w-6xl mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="flex justify-between">
                     <div class="flex space-x-7">
-                        <div>
+                        <div class="pr-50">
                             <!-- Website Logo -->
                             <a href="#" class="flex items-center py-4 px-2">
                             <img src="<?= ASSETS?>/pomoro/img/favicon.png" alt="" id="nav-logo" class="w-8">
