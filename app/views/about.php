@@ -40,5 +40,6 @@
 
     <script src="<?=ASSETS ?>/pomoro/javascript/main.js"></script>
 
-</body>
-</html>
+<?php
+    include_once '../app/components/footer.php';
+?>

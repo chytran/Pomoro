@@ -54,5 +54,6 @@
         </div>
     </div>
     <script src="<?=ASSETS ?>"></script>
-</body>
-</html>
+<?php
+    include_once '../app/components/footer.php';
+?>

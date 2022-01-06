@@ -16,5 +16,6 @@
 			</div>
 
 
-	</body>
-</html>
+<?php
+    include_once '../app/components/footer.php';
+?>
