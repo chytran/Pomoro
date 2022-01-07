@@ -16,7 +16,7 @@ class Account extends Controller
         $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
         $data['title_page'] = 'Pomoro - Account';
         
-        $this->view("about", $data);
+        $this->view("accountDashboard", $data);
     }
     
 }
