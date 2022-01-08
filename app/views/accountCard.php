@@ -15,10 +15,12 @@
 <div id="account-right">
     <div id="content">
         <!-- Show with php start-->
+        <!-- If statement for repitition -->
         <div class="card-components">Card 1</div>
         <div class="card-components">Card 2</div>
         <div class="card-components">Card 3</div>
         <div class="card-components">Card 4</div>
+        <div class="card-components">Card 5</div>
         <!-- Show with php end -->
     </div>
 </div>
