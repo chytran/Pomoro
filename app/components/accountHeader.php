@@ -8,6 +8,13 @@
                 <a href="" class="text-white pt-6 sm:l hover:text-green-700 transition duration-200 sm:pl-10 md:text-xl">History</h1>
                 <a href="" class="text-white pt-6 sm:l hover:text-green-700 transition duration-200 sm:pl-10 md:text-xl">Fund Transfer</a>
             </div>
+            <!-- Matthew Razo  -->
+            <div id="button" class="w-4 relative h-screen bg-red-500 ml-8 z-20 flex ">
+                <button id="side-button" class="">
+                    <i class='bx bxs-circle-half text-3xl text-red-400'></i>
+                </button>
+            </div>
+            <!-- Matthew Razo -->
         </div>
         <div id="right" class="w-4/6 sm:w-4/6 md:w-4/6 h-screen bg-white z-10">
 
