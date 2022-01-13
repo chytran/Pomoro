@@ -16,7 +16,7 @@
     <div id="organizer-adjustment" class="bg-white relative z-20 flex flex-col justify-center h-screen w-full">
         <div id="outer-border" class="w-full h-screen bg-red-100 flex flex-col justify-center items-center">
             <div id="title-container" class="w-full h-16 flex justify-center items-center">
-                <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Dashboard</h1>
+                <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Cards</h1>
             </div>
             <div id="content-container" class="h-100% w-full flex flex-col justify-center items-center">
                 <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
