@@ -18,5 +18,13 @@ class Account extends Controller
         
         $this->view("accountDashboard", $data);
     }
+
+    function card() {
+        $DB = new Database();
+        $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
+        $data['title_page'] = 'Pomoro - Account Card';
+        
+        $this->view("accountCard", $data);
+    }
     
 }
