@@ -26,5 +26,13 @@ class Account extends Controller
         
         $this->view("accountCard", $data);
     }
+
+    function cardRegister() {
+        $DB = new Database();
+        $data = $DB->read("SELECT * FROM USERS");
+        $data['title_page'] = 'Pomoro Card Registration';
+
+        $this->view("cardRegistration", $data);
+    }
     
 }
