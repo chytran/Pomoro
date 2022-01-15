@@ -42,7 +42,7 @@
                         <!-- Primary Navbar items -->
                         <div class="hidden md:flex items-center space-x-1">
                             <a href="" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
-                            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Register New Card</a>
+                            <a href="account/cardRegister" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Register New Card</a>
                             <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Account</a>
                             <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
                         </div>

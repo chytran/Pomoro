@@ -6,17 +6,11 @@ Class CardRegistration extends Controller
     {
         $data['title_page'] = 'Pomoro - Card Registration';
 
-        if(isset($_POST['email'])
+        if(isset($_POST['email']))
         {
-            if(is_array($_POST)) {
-                var_dump($_POST);
-                if(!$_POST == null) {
-                    $account = $this->loadModel("account");
-                    $accountTime = new Account;
-                    $accountTime->registerCard($_POST);
-                }
-            }
-        } 
+            $user = $this->loadModel("account");
+            $userTime = new Account;
+            $userTime->registerCard($_POST);
         $this->view("cardRegistration", $data);
     }
 }
