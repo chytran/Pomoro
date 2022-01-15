@@ -12,11 +12,11 @@ Class Account
         if(isset($POST['email1']))
         {
             // Array for holding exact values
-            $arr['email'] = $POST['email1']; // run if value is in array and isset
+            $arr['email1'] = $POST['email1']; // run if value is in array and isset
             $arr['amount'] = $_POST['amount'];
             $arr['creditCard'] = $POST['creditCard'];
 
-            $query = "INSERT INTO account (email, amount, creditCard) values (:email, :amount, :creditCard)";
+            $query = "INSERT INTO account (email, amount, creditCard) values (:email1, :amount, :creditCard)";
             $data = $DB->write($query, $arr);
             if($data) 
             {

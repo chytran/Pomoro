@@ -30,7 +30,7 @@
                         </div>
                         <div id="email" class="w-4/5 text-center flex ">
                             <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-1/6 font-medium -ml-4 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs">EMAIL</span>
-                            <input name="email" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none">
+                            <input name="email1" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none">
                         </div>
                         <div id="amount" class="w-4/5 text-center flex ">
                             <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-1/6 font-medium -ml-4 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs">AMOUNT</span>
