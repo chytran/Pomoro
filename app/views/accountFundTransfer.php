@@ -47,7 +47,5 @@ lines (16 sloc)  349 Bytes
 ?>
 
 <!-- </body> -->
-<?php
-    include_once '../app/components/footer.php';
-?>
+
           

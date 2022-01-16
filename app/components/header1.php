@@ -52,10 +52,16 @@
                         <?php if(isset($_SESSION['user_name'])): ?>
                             <h1 class="py-2 px-2 font-medium text-gray-600 rounded transition duration-300">Hello, <?= $_SESSION['user_name'] ?></h1>
                         <?php else: ?>
+                            <a href="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-redred-500 hover:text-red-500 transition duration-300">Log In</a>
+                            <a href="signup" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Sign Up</a>
+                        <?php endif; ?>
+                            
+                        <?php if(isset($_SESSION['user_name'])): ?>
+                            <a href="signout" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Signout</a>   
+                        <?php else: ?>
 
                         <?php endif; ?>
-                        <a href="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-redred-500 hover:text-red-500 transition duration-300">Log In</a>
-                        <a href="signup" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Sign Up</a>
+                        
                     </div>
                     
                     <!-- Mobile menu button -->
