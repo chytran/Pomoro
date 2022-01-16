@@ -19,12 +19,12 @@ class Account extends Controller
         $this->view("accountDashboard", $data);
     }
 
-    function card() {
+    function history() {
         $DB = new Database();
         $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
-        $data['title_page'] = 'Pomoro - Account Card';
+        $data['title_page'] = 'Pomoro - Account';
         
-        $this->view("accountCard", $data);
+        $this->view("accountHistory", $data);
     }
     
 }
