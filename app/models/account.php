@@ -27,4 +27,11 @@ Class Account
             }
         }
     }
+
+    function historyPull() {
+        $DB = new Database();
+
+        $_SESSION['error'] = '';
+
+    }
 }

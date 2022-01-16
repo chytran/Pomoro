@@ -30,7 +30,7 @@
                 const button = document.getElementById("button");
             
                 button.addEventListener("click", ()=> {
-                    bar.classList.toggle("-ml-52");
+                    bar.classList.toggle("-ml-56");
                 })
             </script>
         </div>
