@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?= $data['title_page'] ?></title>
-    <!--============ CSS ============-->
-    <link rel="stylesheet" href="<?=ASSETS?>pomoro/css/output.css">
-
-    <!--============ POPPINS ============-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!--============ FAVICON ============-->
-    <link rel="icon" href="ASSETS?>pomoro/img/favicon.png">
-
-    <!--=============== BOXICONS ===============-->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-</head>
 <style>
     *{
         box-sizing: border-box;
@@ -42,52 +21,84 @@
         color: transparent;
         transition: 0.4s;
     }
+    .transitioning {
+        transition: width 2s, height 2s, transform 2s;
+    }
 </style>
 <body>
    <!--==================== HEADER  ====================-->
    <header id="header" class="w-full fixed top-0 left-0 z-20">
-        <nav id="nav-container" class="h-12 flex justify-between items-center">
-            <a href="#" id="nav-logo" class="flex items-center columns-1 font-medium pl-4">
-                <img src="<?= ASSETS?>/pomoro/img/favicon.png" alt="" id="nav-logo" class="w-8">
-                <h1 class="text-xl">omoro</h1>
-            </a>
-            
-            <div id="nav-menu" class="fixed bg-grey-50 -top-full left-0 w-full pt-12 rounded-bl-3xl rounded-br-3xl shadow-md" style="transition:0.4s;">
-                <ul id="nav-list" class="flex flex-col items-center gap-y-6">
-                    <li id="nav-item">
+        <nav class="bg-white shadow-lg" style="transition:0.3s;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex space-x-7">
+                        <div class="pr-50">
+                            <!-- Website Logo -->
+                            <a href="#" class="flex items-center py-4 px-2">
+                            <img src="<?= ASSETS?>/pomoro/img/favicon.png" alt="" id="nav-logo" class="w-8">
+                                <span class="font-semibold text-gray-500 text-lg">omoro</span>
+                            </a>
+                        </div>
+                        <!-- Primary Navbar items -->
+                        <div class="hidden md:flex items-center space-x-1">
+                            <a href="home" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
+                            <a href="cardRegistration" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Register New Card</a>
+                            <a href="account" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Account</a>
+                            <a href="about" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
+                        </div>
+                    </div>
+                    <!-- Secondary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-3 ">
                         <?php if(isset($_SESSION['user_name'])): ?>
-                            <h1>Hello <?= $_SESSION['user_name'] ?></h1>
+                            <h1 class="py-2 px-2 font-medium text-gray-600 rounded transition duration-300">Hello, <?= $_SESSION['user_name'] ?></h1>
                         <?php else: ?>
-                            <!-- Show nothing -->
-                        <?php endif; ?>
-                    </li>
-                    <li id="nav-item">
-                        <a href="home" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Home</a>
-                    </li>
-                    <li id="nav-item">
-                        <a href="about" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">About</a>
-                    </li>
-                    <li id="nav-item">
-                        <a href="account" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Account</a>
-                    </li>
-                    <li id="nav-item">
-                        <?php if(!isset($_SESSION['username'])): ?>
-                            <a href="logout" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Logout</a>
-                        <?php else: ?>
-                            <a href="login" id="nav-link" class="text-black font-medium transition duration-200 hover:text-red-600">Login</a>
-                        <?php endif; ?>
-                    </li>
-                </ul>
 
-                <div id="nav-close" class="text-4xl absolute top-2 right-4 cursor-pointer">
-                    <i class="bx bx-x"></i>
+                        <?php endif; ?>
+                        <a href="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-redred-500 hover:text-red-500 transition duration-300">Log In</a>
+                        <a href="signup" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Sign Up</a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button ">
+                        <svg class=" w-6 h-6 text-gray-500 hover:text-red-500 "
+                            x-show="!showMenu"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    </div>
                 </div>
-
             </div>
-
-            <div id="nav-toggle" class="inline-flex mr-4 text-3xl cursor-pointer">
-                <i id="nav-toggle-button" class="bx bx-grid-alt"></i>
+            <!-- mobile menu -->
+            <div style="transition: 0.7s;" class="opacity-0 hidden md:hidden mobile-menu transform -translate-y-full md:relative md:translate-y-0 sm:relative sm:translate-y-0 transition duration-75 ease-in-out" style="transition: all 1s ease-in">
+                <ul class="" style="transition:0.4s;">
+                    <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-red-500 font-semibold">Home</a></li>
+                    <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Business</a></li>
+                    <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Impact</a></li>
+                    <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Investors</a></li>
+                </ul>
             </div>
-            
+            <script>
+                const btn = document.querySelector("button.mobile-menu-button");
+                const menu = document.querySelector(".mobile-menu");
+
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                    menu.classList.add("opacity-100");
+                    menu.classList.add("duration-75");
+                    menu.classList.add("transition");
+                    menu.classList.add("ease-linear");
+                    setTimeout(() => {
+                        menu.classList.toggle("-translate-y-full");
+                    }, (1*1));
+                });
+            </script>
         </nav>
     </header>

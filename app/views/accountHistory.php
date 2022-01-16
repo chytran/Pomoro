@@ -2,7 +2,7 @@
     require_once '../app/components/htmlSetup.php';
 ?>
 <?php
-    require_once '../app/components/headerHistory.php';
+    require_once '../app/components/header.php';
 ?>
 <!-- <header>  -->
 

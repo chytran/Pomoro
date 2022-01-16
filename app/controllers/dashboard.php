@@ -1,6 +1,6 @@
 <?php
 
-class Account extends Controller
+class Dashboard extends Controller
 {
     function index()
     {
@@ -10,5 +10,4 @@ class Account extends Controller
         
         $this->view("accountDashboard", $data);
     }
-    
 }
