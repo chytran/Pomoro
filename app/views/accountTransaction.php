@@ -13,6 +13,12 @@
 
 <!-- Right side of account -->
 
+
+<!-- End of accountheader -->
+<?php
+    include_once "../app/components/accountHeaderEnd.php";
+?>
+
 <!-- </body> -->
 <?php
     include_once '../app/components/footer.php';
