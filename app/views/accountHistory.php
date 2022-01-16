@@ -23,25 +23,25 @@
         <div class="md:grid-col-1 relative pt-2 divide-y-2 divide-red-500">
             <div class="justify-center text-center pb-8"> 
                 <span id="Date" class="float-left pl-2">1/4/2022</span>
-                <span id="Description" style="padding-left: 1.95rem;" class="float-left">Spotify scheduled payment to CRD 49050 Confirmation# 2060795209</span>
+                <span id="Description" style="padding-left: 1.95rem;" class="float-left">Spotify scheduled payment to CRD 49050</span>
                 <span id="Balance" class="float-right pr-2 italic">$14,200</span>
                 <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$10</span>
             </div>
             <div class="justify-center text-center pb-8 pt-2">
                 <span id="Date" class="float-left pl-2">1/2/2022</span>
-                <span id="Description" style="padding-left: 1.95rem;" class="float-left">Disney+ scheduled payment to CRD 49050 Confirmation# 2034395209</span>
+                <span id="Description" style="padding-left: 1.95rem;" class="float-left">Disney+ scheduled payment to CRD 49050</span>
                 <span id="Balance" class="float-right pr-2 italic">$14,210</span>
                 <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$15</span>  
             </div>
             <div class="justify-center text-center pb-8 pt-2">
                 <span id="Date"  class="float-left pl-2">1/1/2022</span>
-                <span id="Description" style="padding-left: 1.95rem;" class="float-left">CVS+ payment to CRD 49050 Confirmation# 2324395209</span>
+                <span id="Description" style="padding-left: 1.95rem;" class="float-left">CVS+ payment to CRD 49050</span>
                 <span id="Balance" class="float-right pr-2 italic">$14,265</span>
                 <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$55</span>                  
             </div>
             <div class="justify-center text-center pb-8 pt-2">
                 <span id="Date" class="float-left pl-2">12/1/2022</span>
-                <span id="Description" style="padding-left: 1.40rem;" class="float-left">Nike payment to CRD 49050 Confirmation# 2235395209</span>
+                <span id="Description" style="padding-left: 1.40rem;" class="float-left">Nike payment to CRD 49050</span>
                 <span id="Balance" class="float-right pr-2 italic">$14,490</span>
                 <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$225</span>  
             </div>
