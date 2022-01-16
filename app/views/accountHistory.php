@@ -12,7 +12,7 @@
 ?>
 
 <!-- Right side of account -->
-<div id="right" class="w-5/6 sm:w-5/6 md:w-5/6 h-screen bg-white z-10 pt-14">
+<div id="right" class="w-full sm:w-full md:w-full h-screen bg-white z-10 pt-14">
         <div class="relative border-solid border-2 border-black"> 
                 <span id="Date" style="padding-left: 0.50rem;" class="float-left">Date</span>
                 <span id="Description" style="padding-left: 3.75rem;" class="float-left">Description</span>
