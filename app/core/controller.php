@@ -8,7 +8,7 @@ Class Controller
         {
             include "../app/views/" . $view . ".php";
         }else{
-            include "../app/views/404.php";
+            include "../app/views/error.php";
         }
     }
 

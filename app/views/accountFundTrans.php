@@ -1,3 +1,5 @@
+lines (16 sloc)  349 Bytes
+   
 <?php
     require_once '../app/components/htmlSetup.php';
 ?>
@@ -12,8 +14,37 @@
 ?>
 
 <!-- Right side of account -->
-
+<div id="right" class=" w-full sm:w-4/6 md:w-full xl:w-full h-screen  z-10">
+                <div id="organizer-adjustment" class="bg-white relative z-20 flex flex-col justify-center h-screen w-full">
+                    <div id="outer-border" class="w-full h-screen bg-red-100 flex flex-col justify-center items-center">
+                        <div id="title-container" class="w-full h-16 flex justify-center items-center">
+                            <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Transfers</h1>
+                        </div>
+                        <div id="content-container" class="h-100% w-full flex flex-col justify-center items-center">
+                            <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
+                                <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">From Account</h1>
+                                <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"></div>
+                                <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">Select an Account</a></div>
+                            </div>
+                            <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
+                                <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">To Account</h1>
+                                <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"></div>
+                                <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">Select an Account</a></div>
+                            </div>
+                            <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
+                                <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">Amount</h1>
+                                <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"></div>
+                                <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">$ Enter Amount</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>  
+        </div>
+    </div>
 <!-- </body> -->
 <?php
     include_once '../app/components/footer.php';
 ?>
+          
