@@ -16,5 +16,8 @@
 
     <!--============ FAVICON ============-->
     <link rel="icon" href="<?=ASSETS?>pomoro/img/favicon.png">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     
 </head>

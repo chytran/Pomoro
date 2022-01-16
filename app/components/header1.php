@@ -41,10 +41,10 @@
                         </div>
                         <!-- Primary Navbar items -->
                         <div class="hidden md:flex items-center space-x-1">
-                            <a href="" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
-                            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Our Business</a>
-                            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Our Impact</a>
-                            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Investors</a>
+                            <a href="home" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
+                            <a href="cardRegistration" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Register New Card</a>
+                            <a href="account" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Account</a>
+                            <a href="about" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
                         </div>
                     </div>
                     <!-- Secondary Navbar items -->
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <!-- mobile menu -->
-            <div class="opacity-0 hidden md:hidden mobile-menu transform -translate-y-full md:relative md:translate-y-0 sm:relative sm:translate-y-0 transition duration-75 ease-in-out" style="transition: all 1s ease-in">
+            <div style="transition: 0.7s;" class="opacity-0 hidden md:hidden mobile-menu transform -translate-y-full md:relative md:translate-y-0 sm:relative sm:translate-y-0 transition duration-75 ease-in-out" style="transition: all 1s ease-in">
                 <ul class="" style="transition:0.4s;">
                     <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-red-500 font-semibold">Home</a></li>
                     <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Business</a></li>
