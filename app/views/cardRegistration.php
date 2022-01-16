@@ -45,12 +45,12 @@
                             <span class="pl-2 opacity-90 text-sm" style="font-family: Poppins, sans-serif;">I accept the registration</span>
                         </div>    -->
                         <div id="button-container-login" class="w-4/5 text-center -mt-4">
-                            <button id="sign-in" class="w-32 h-10 rounded-3xl bg-red-500 text-white hover:opacity-70 transition duration-200 ease-in cursor-pointer">Register Card</button>
-                        </div>     
+                            <button id="sign-in" class="w-32 h-10 rounded-3xl bg-red-500 text-white hover:opacity-70 transition duration-200 ease-in cursor-pointer">Sign up</button>
+                        </div>  
                         <!-- <div id="signup-container">                        
                             <span class="opacity-90 text-sm sm:text-xs" style="font-family: Poppins, sans-serif;">Don't have an account?</span>
                             <a class="font-semibold text-base underline transition duration-200 ease-in sm:text-sm hover:opacity-80" style="font-family: Poppins, sans-serif;" href="#">Sign In</a>
-                        </div>    -->
+                        </div>   -->
                     </div>
                 </div>
             </form>    

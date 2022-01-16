@@ -16,10 +16,7 @@ Class Signup extends Controller
                     $userTime = new User;
                     $userTime->signup($_POST);
                 }
-            }
-            
-            
-            
+            }          
         } else if(isset($_POST['username']) && !isset($_POST['email'])) {
             $user = $this->loadModel("user");
             $userTime = new User;

@@ -8,7 +8,7 @@ class Account extends Controller
         $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
         $data['title_page'] = 'Pomoro - Account';
         
-        $this->view("account", $data);
+        $this->view("accountDashboard", $data);
     }
 
     function dashboard() {
