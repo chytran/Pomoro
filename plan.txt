@@ -1,11 +1,10 @@
 --- Matthew Razo --- 1/16/2021
 -footer
 -history (responsive)
--fund transfer
-
 
 --- Kevin Tran --- 1/16/2021
 connect accounts to login
+get cards in order to do fund transfer
 
 -home.php (1st: Link to account, 2nd: Advertisement,3rd: About,4th: footer)
 
