@@ -1,10 +1,11 @@
---- Matthew Razo ---
--About.php --
--404.php- 
--footer.php-
+--- Matthew Razo --- 1/16/2021
+-footer
+-history (responsive)
+-fund transfer
 
---- Kevin Tran ---
--signout.php
+
+--- Kevin Tran --- 1/16/2021
+connect accounts to login
 
 -home.php (1st: Link to account, 2nd: Advertisement,3rd: About,4th: footer)
 

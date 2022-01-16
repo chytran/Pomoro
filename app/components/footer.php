@@ -1,6 +1,6 @@
 
 <!--==================== FOOTER ====================-->
-    <footer id="footer" class="relative h-96">
+    <footer id="footer" style="" class="relative sm:h-96;">
         <div class="text-white text-transparent text-2xl md:text-3xl lg:text-3xl font-bold p-4 bg-red-700 h-full" style="font-family: poppins, sans-serif;">
             <!-- <h1 class="text-white text-center"></h1> -->
             <ul id="footer-utilities" class="float-left pr-10">

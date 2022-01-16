@@ -9,7 +9,7 @@
     <main class="overflow-x-hidden">
         <!-- Account -->
         <div id="account" class="h-screen relative m-auto w-screen bg-gradient-to-bl from-red-100 to-red-400">
-            <img id="credit-img" src="/dist/img/credit.png" alt="credit-hand" class="invisible lg:visible lg:right-0 xl:right-44 absolute bottom-0">
+            <img id="credit-img" src="<?=ASSETS?>pomoro/img/credit.png" alt="credit-hand" class="invisible lg:visible lg:right-0 xl:right-44 absolute bottom-0">
             <!-- Left -->
             <div id="text-container" class="absolute left-36 top-1/4 h-10 w-2/4 sm:w-1/4 sm:left-44">
                 <h1 id="header-account" class="text-white text-3xl md:text-7xl" style="font-family: Poppins, sans-serif;">The most supported & protected banking system</h1>
