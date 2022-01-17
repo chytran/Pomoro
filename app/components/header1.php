@@ -41,10 +41,14 @@
                         </div>
                         <!-- Primary Navbar items -->
                         <div class="hidden md:flex items-center space-x-1">
-                            <a href="home" class="py-4 px-2 text-gray-500 border-b-4 border-white hover:border-red-500 hover:text-red-500 font-semibold ">Home</a>
-                            <a href="cardRegistration" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Register New Card</a>
-                            <a href="account" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Account</a>
-                            <a href="about" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">About</a>
+                            <a href="home" style="padding-top:0.3rem;" class="px-2 text-gray-500 border-b-4 border-white hover:border-red-500 hover:text-red-500 font-semibold ">Home</a>
+                            <?php if(isset($_SESSION['user_name'])): ?>
+                                <a href="cardRegistration" style="padding-top:0.3rem;" class="px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Register New Card</a>
+                                <a href="account" style="padding-top:0.3rem;" class="px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Account</a>
+                            <?php else: ?>
+
+                            <?php endif; ?>
+                            <a href="about" style="padding-top:0.3rem;" class="px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">About</a>
                         </div>
                     </div>
                     <!-- Secondary Navbar items -->

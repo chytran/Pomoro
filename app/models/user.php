@@ -80,6 +80,8 @@ Class User
             }
         }
         return false;
+        header("Location:" . ROOT . "login");
+        
     }
 
     function logout()
