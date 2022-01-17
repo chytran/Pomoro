@@ -28,10 +28,26 @@ Class Account
         }
     }
 
-    function historyPull() {
+    function historyPush() {
         $DB = new Database();
 
-        $_SESSION['error'] = '';
+        $_SESSION['error'] = "";
+        if(isset($POST['email1']))
+        {
+            // Array for holding exact values
+            $arr['email1'] = $POST['email1']; // run if value is in array and isset
+            $arr['history'] = date("Y-m-d H:i:s");
+            $arr['message'] = "hello";
 
+            $query = "INSERT INTO hsitory (email, history, message) values (:email1, :history, :message";
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+                header("Location:" . ROOT . "home");
+                die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
     }
 }
