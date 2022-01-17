@@ -1,5 +1,4 @@
 --- Matthew Razo --- 1/16/2021
--footer
 -history (responsive)
 
 --- Kevin Tran --- 1/16/2021
