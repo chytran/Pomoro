@@ -86,9 +86,9 @@
             <div style="transition: 0.7s;" class="opacity-0 hidden md:hidden mobile-menu transform -translate-y-full md:relative md:translate-y-0 sm:relative sm:translate-y-0 transition duration-75 ease-in-out" style="transition: all 1s ease-in">
                 <ul class="" style="transition:0.4s;">
                     <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-red-500 font-semibold">Home</a></li>
-                    <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Business</a></li>
-                    <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Our Impact</a></li>
-                    <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Investors</a></li>
+                    <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Register New Card</a></li>
+                    <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Account</a></li>
+                    <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">About</a></li>
                 </ul>
             </div>
             <script>
