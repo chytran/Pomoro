@@ -11,7 +11,7 @@ Class CardRegistration extends Controller
             $user = $this->loadModel("account");
             $userTime = new Account;
             $userTime->historyPush($_POST);
-            // $userTime->registerCard($_POST);
+            $userTime->registerCard($_POST);
             
         }
         $this->view("cardRegistration", $data);
