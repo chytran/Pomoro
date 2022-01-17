@@ -2,6 +2,8 @@
 
 Class Account
 {
+
+    /*======================= CARD ===========================*/
     function registerCard($POST) 
     {
         print_r("I am here");
@@ -28,6 +30,32 @@ Class Account
         }
     }
 
+    function getCard()
+    {
+        $DB = new Database();
+
+        $arr['user_email'] = $POST['email'];
+        if(isset($_SESSION['user_email'])) 
+        {
+            $query = "SELECT * FROM account where email = :user_email";
+            $data = $DB->read($query,$arr);
+            if(is_array($data)) 
+            {
+                // logged in
+                $_SESSION['user_id'] = $data[0]->userid;
+                $_SESSION['user_email'] = $data[0]->email;
+                $_SESSION['user_amount'] = $data[0]->amount;
+                $_SESSION['user_creditCard'] = $data[0]->creditCard;
+
+                return true;
+            }
+        }
+        return false;
+        header("Location:" . ROOT . "login");
+        
+    }
+
+
     function historyPush($POST) 
     {
         $DB = new Database();
@@ -44,7 +72,7 @@ Class Account
             $data = $DB->write($query, $arr);
             if($data) 
             {
-                
+
             } else {
                 $_SESSION['error'] = 'Please enter valid information to create an card';
             }

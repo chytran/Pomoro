@@ -11,6 +11,20 @@
     require_once '../app/components/accountHeader.php';
 ?>
 
+<?php
+    $dsn = DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";";
+
+    $pdo = new PDO($string, DB_USER, DB_PASS);
+    $pdo->setAttribute(PDO:ATTR_DEFAULT_FETCH_MODE,
+    PDO::FETCH_OBJ);
+
+    $sql = 'SELECT * FROM account'
+    $stmt = $pdo->query($sql);
+    $stmt->execute();
+
+    while
+?>
+
 <!-- Right side of account -->
 <div id="right" class="w-full sm:w-4/6 md:w-full xl:w-full h-screen  z-10">
     <div id="organizer-adjustment" class="bg-white relative z-20 flex flex-col justify-center h-screen w-full">
@@ -19,6 +33,11 @@
                 <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Cards</h1>
             </div>
             <div id="content-container" class="h-100% w-full flex flex-col justify-center items-center">
+                <?php while($row = mysqli_fetch_assoc($result){ ?>
+                    
+                <?php } else {?>
+
+                <?php } ?>
                 <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
                     <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">Main Account</h1>
                     <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount">$11000.00</div>
