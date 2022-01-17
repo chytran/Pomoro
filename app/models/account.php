@@ -13,7 +13,7 @@ Class Account
         {
             // Array for holding exact values
             $arr['email1'] = $POST['email1']; // run if value is in array and isset
-            $arr['amount'] = $_POST['amount'];
+            $arr['amount'] = 0; // Set account to have 0 initially
             $arr['creditCard'] = $POST['creditCard'];
 
             $query = "INSERT INTO account (email, amount, creditCard) values (:email1, :amount, :creditCard)";
