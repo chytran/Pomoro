@@ -41,10 +41,10 @@
                         </div>
                         <!-- Primary Navbar items -->
                         <div class="hidden md:flex items-center space-x-1">
-                            <a href="home" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
-                            <a href="cardRegistration" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Register New Card</a>
-                            <a href="account" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Account</a>
-                            <a href="about" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
+                            <a href="home" class="py-4 px-2 text-gray-500 border-b-4 border-white hover:border-red-500 hover:text-red-500 font-semibold ">Home</a>
+                            <a href="cardRegistration" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Register New Card</a>
+                            <a href="account" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Account</a>
+                            <a href="about" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">About</a>
                         </div>
                     </div>
                     <!-- Secondary Navbar items -->
