@@ -6,7 +6,7 @@
 ?>
 <html>
     <body>
-    
+        <h1><?=  $data['username'] ?></h1>
 		<h1 class="text-white text-center text-2xl md:text-3xl lg:text-4xl font-bold p-4 bg-red-700" style="font-family: poppins, sans-serif;">About Pomoro</h1>
 
         <script src="<?=ASSETS ?>"></script>
