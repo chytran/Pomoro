@@ -17,13 +17,13 @@
 <div id="right" class="w-full sm:w-4/6 md:w-full xl:w-full h-screen  z-10">
     <div id="organizer-adjustment" class="bg-white relative z-20 flex flex-col justify-center h-screen w-full">
         <div id="outer-border" class="w-full h-screen bg-red-100 flex flex-col justify-center items-center">
-            <div id="title-container" class="w-full h-16 flex justify-center items-center">
+            <div id="title-container" class="w-full h-16 mt-36 flex justify-center items-center">
                 <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Cards</h1>
             </div>
-            <div id="content-container" class="h-full mt-24 w-full flex flex-col justify-center items-center">
+            <div id="content-container" class="h-full w-full flex flex-col justify-center items-center">
                 <?php
                 var_export($data);
-                print_r($data);
+                // print_r($data);
                     foreach($data as $row) {
                         echo '<h1>' . $row['username'] . ' '  . $row['password'] . '</h1>';
                     }

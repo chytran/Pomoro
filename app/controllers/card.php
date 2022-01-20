@@ -8,8 +8,9 @@ class Card extends Controller
         $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
         $data['title_page'] = 'Pomoro - Cards';
         
-        $array = json_decode(json_encode($data), true);
-        $this->view("accountCard", $array);
+        // $array = json_decode(json_encode($data), true);
+        $data = json_decode(json_encode($data), true);
+        $this->view("accountCard", $data);
     }
     
 }
