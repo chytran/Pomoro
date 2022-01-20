@@ -21,13 +21,13 @@
                 <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Cards</h1>
             </div>
             <div id="content-container" class="h-full w-full flex flex-col justify-center items-center">
-                <?php
-                var_export($data);
-                // print_r($data);
-                    foreach($data as $row) {
-                        echo '<h1>' . $row['username'] . ' '  . $row['password'] . '</h1>';
-                    }
-                ?>
+                
+                    
+                    <?php foreach($data as $row):?>
+                       <h1><?=$row->email?></h1>
+                       <h1><?=$row->amount?></h1>
+                       <h1><?=$row->creditCard?></h1>
+                    <?php endforeach;?>
                 <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
                     <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">Main Account</h1>
                     <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount">$11000.00</div>
