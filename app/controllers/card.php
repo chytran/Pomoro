@@ -4,13 +4,15 @@ class Card extends Controller
 {
     function index()
     {
-        $DB = new Database();
-        $data = $DB->read("SELECT * FROM account"); // data holds everything from query
         $data['title_page'] = 'Pomoro - Cards';
-        
-        $array = json_decode(json_encode($data), true);
+
+        $account = $this->loadModel("account");
+        $accountTime = new Account;
+        $result = $accountTime->get_all();
+
+        $data['posts'] = $result;
+        // $array = json_decode(json_encode($data), true);
         // $data = json_decode(json_encode($data), true);
         $this->view("accountCard", $data);
-    }
-    
+    } 
 }
