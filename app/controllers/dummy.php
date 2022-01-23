@@ -1,14 +1,14 @@
 <?php
 
-Class ecommerceHome extends Controller
+Class changeMyName extends Controller
 {
     function index()
     {
         $DB = new Database();
         $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
-        $data['title_page'] = 'Pomoro - Home';
+        $data['title_page'] = 'Pomoro - (Change my Title Name)"';
         
-        $this->view("ecommerceHome", $data);
+        $this->view("changeMyName", $data);
     }
 
 }

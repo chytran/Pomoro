@@ -1,12 +1,13 @@
---- Matthew Razo --- 1/16/2021
-Try to display information from PDO database
-Withdraw/deposits
-Money transfer between accounts
+--- Matthew Razo --- 1/23/2021
+display history results
+fix login structure
 
---- Kevin Tran --- 1/16/2021
-Try to display information from PDO database
+--- Kevin Tran --- 1/23/2021
 Withdraw/deposits
-Money transfer between accounts
+
+--- Nick --- 1/16/2021
+Design a ecommerce home page (w/ or w/o product)
+
 
 -home.php (1st: Link to account, 2nd: Advertisement,3rd: About,4th: footer)
 
