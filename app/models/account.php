@@ -37,14 +37,17 @@ Class Account
         $DB = new Database();
 
         $_SESSION['error'] = "";
-        if(isset($POST['email1']))
+        if(isset($POST['withdraw']))
         {
-            // Array for holding exact values
-            $arr['email1'] = $POST['email1']; // run if value is in array and isset
-            $arr['amount'] = 0; // Set account to have 0 initially
-            $arr['creditCard'] = $POST['creditCard'];
+            list($creditCardChange, $creditCardID) = explode("_", $_POST['creditCardChange'], 2);
 
-            $query = "INSERT INTO account (email, amount, creditCard) values (:email1, :amount, :creditCard)";
+            // Array for holding exact values
+            $arr['creditCardChange'] = $creditCardChange; 
+            $arr['creditCardID'] = $creditCardID;
+            $arr['amountChange'] = $POST['amountChange']; // Set account to have 0 initially
+            // $arr['creditCard'] = $POST['creditCard'];
+
+            $query = "UPDATE `account` SET amount=':amountChange' WHERE creditCard = :creditCardChange AND id = :creditCardID";
             $data = $DB->write($query, $arr);
             if($data) 
             {

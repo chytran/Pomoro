@@ -14,15 +14,15 @@ class Transaction extends Controller
         $data['cards'] = $result;
 
         // isset then add
-        if(isset($_POST['transactionTime']) && isset($_POST['amount']) && isset($_POST['card'])) {
-            if($_POST['transactionTime'] = 'withdraw') {
-                $withdraw = $this->loadModel("account");
-                $withdrawTime = new Account;
-                $withdrawTime->withdrawNumbers($_POST);
+        if(isset($_POST['creditCardChange']) && isset($_POST['depOrWith']) && isset($_POST['amountChange'])) {
+            print_r("This works");
+            
+            if($_POST['depOrWith'] = 'withdraw') {
+                print_r("This is a withdraw");
+                // $accountTime->depositNumbers($_POST);
             } else {
-                $deposit = $this->loadModel("account");
-                $depositTime = new Account;
-                $depositTime->depositNumbers($_POST);
+                print_r("This is a deposit");
+            //     // $accountTime->depositNumbers($_POST);
             }
         } else {
             // Error if necessary

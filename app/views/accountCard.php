@@ -27,6 +27,7 @@
                             <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
                                 <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg"><?=$row->creditCard?> Card</h1>
                                 <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount">$<?=$row->amount?></div>
+                                <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"><?=$row->id?></div>
                                 <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">View Account</a></div>
                             </div>
                         <?php endforeach;?>
