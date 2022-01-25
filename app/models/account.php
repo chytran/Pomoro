@@ -37,21 +37,29 @@ Class Account
         $DB = new Database();
 
         $_SESSION['error'] = "";
-        if(isset($POST['depOrWith']))
+        if(isset($POST['depositOrWithdraw']))
         {
             // list($creditCardChange, $creditCardID) = explode("_", $_POST['creditCardChange'], 2);
+            
+                // Array for holding exact values
+                $arr['creditCardChange'] = $POST['creditCardChange']; 
+                $arr['email2'] = $POST['email2'];
+                $arr['amountChange'] = $POST['amountChange']; // Set account to have 0 initially
+                // $arr['creditCard'] = $POST['creditCard'];
 
-            // Array for holding exact values
-            $arr['creditCardChange'] = $POST['creditCardChange']; 
-            $arr['email2'] = $POST['email2'];
-            $arr['amountChange'] = $POST['amountChange']; // Set account to have 0 initially
-            // $arr['creditCard'] = $POST['creditCard'];
+            // Query Changes based on condition
+            if(($POST['depositOrWithdraw'] = 'withdraw') && ($POST['amountChange'] > 0)) {    
+                $query = "UPDATE account SET amount=(amount + :amountChange) WHERE creditCard = :creditCardChange and email = :email2";
+            } 
+            // else if(($POST['depositOrWithdraw'] = 'deposit') && ($POST['amountChange'] > 0)) {
+            //     $query = "UPDATE account SET amount=(amount + :amountChange) WHERE creditCard = :creditCardChange and email = :email2";
+            // } 
 
-            $query = "UPDATE account SET amount=:amountChange WHERE creditCard = :creditCardChange and email = :email2";
+            // Run the conditional query
             $data = $DB->write($query, $arr);
             if($data) 
             {
-                header("Location:" . ROOT . "home");
+                header("Location:" . ROOT . "account");
                 die;
             } else {
                 $_SESSION['error'] = 'Please enter valid information to create an card';

@@ -13,7 +13,9 @@ class Transaction extends Controller
         // Data for cards
         $data['cards'] = $result;
         
-        if(isset($_POST['depOrWith'])) {
+
+
+        if(isset($_POST['depositOrWithdraw'])) {
             $depOrWithTime = new Account;
             $depOrWithTime->depositOrWithdraw($_POST);
         }
