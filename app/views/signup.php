@@ -18,7 +18,7 @@
                     </div> 
                 </div>
                 <!--============ Right Side============-->
-                <form method="POST" class="w-100%">
+                <form method="POST" class="w-full">
                     <div id="right" class="bg-grey-50 z-10 flex items-center justify-center h-full">
                         <div id="right-container" class="w-4/5 h-4/5 grid grid-cols-1 justify-center gap-1 place-items-center border-black z-15 ">
                             <div id="login-title-container" class="w-4/5 text-left -mb-4 pl-3 sm:-ml-4">
