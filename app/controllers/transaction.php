@@ -12,23 +12,13 @@ class Transaction extends Controller
 
         // Data for cards
         $data['cards'] = $result;
-
-        // isset then add
-        if(isset($_POST['creditCardChange']) && isset($_POST['depOrWith']) && isset($_POST['amountChange'])) {
-            print_r("This works");
-            
-            if($_POST['depOrWith'] = 'withdraw') {
-                print_r("This is a withdraw");
-                // $accountTime->depositNumbers($_POST);
-            } else {
-                print_r("This is a deposit");
-            //     // $accountTime->depositNumbers($_POST);
-            }
-        } else {
-            // Error if necessary
-        }
-        // else subtract
         
+        if(isset($_POST['depOrWith'])) {
+            $depOrWithTime = new Account;
+            $depOrWithTime->depositOrWithdraw($_POST);
+        }
+        
+
         $this->view("accountTransaction", $data);
     }
     

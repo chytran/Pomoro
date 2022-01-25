@@ -30,24 +30,24 @@ Class Account
         }
     }
 
-    function depositNumbers($POST) 
+    function depositOrWithdraw($POST) 
     {
         print_r("I am here");
         print_r("I am an array");
         $DB = new Database();
 
         $_SESSION['error'] = "";
-        if(isset($POST['withdraw']))
+        if(isset($POST['depOrWith']))
         {
-            list($creditCardChange, $creditCardID) = explode("_", $_POST['creditCardChange'], 2);
+            // list($creditCardChange, $creditCardID) = explode("_", $_POST['creditCardChange'], 2);
 
             // Array for holding exact values
-            $arr['creditCardChange'] = $creditCardChange; 
-            $arr['creditCardID'] = $creditCardID;
+            $arr['creditCardChange'] = $POST['creditCardChange']; 
+            $arr['email2'] = $POST['email2'];
             $arr['amountChange'] = $POST['amountChange']; // Set account to have 0 initially
             // $arr['creditCard'] = $POST['creditCard'];
 
-            $query = "UPDATE `account` SET amount=':amountChange' WHERE creditCard = :creditCardChange AND id = :creditCardID";
+            $query = "UPDATE account SET amount=:amountChange WHERE creditCard = :creditCardChange and email = :email2";
             $data = $DB->write($query, $arr);
             if($data) 
             {
