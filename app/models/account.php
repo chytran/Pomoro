@@ -48,12 +48,12 @@ Class Account
                 // $arr['creditCard'] = $POST['creditCard'];
 
             // Query Changes based on condition
-            if(($POST['depositOrWithdraw'] = 'withdraw') && ($POST['amountChange'] > 0)) {    
+            if(($POST['depositOrWithdraw'] == 'withdraw') && ($POST['amountChange'] > 0)) {    
+                $query = "UPDATE account SET amount=(amount - :amountChange) WHERE creditCard = :creditCardChange and email = :email2";
+            } 
+            else if(($POST['depositOrWithdraw'] == 'deposit') && ($POST['amountChange'] > 0)) {
                 $query = "UPDATE account SET amount=(amount + :amountChange) WHERE creditCard = :creditCardChange and email = :email2";
             } 
-            // else if(($POST['depositOrWithdraw'] = 'deposit') && ($POST['amountChange'] > 0)) {
-            //     $query = "UPDATE account SET amount=(amount + :amountChange) WHERE creditCard = :creditCardChange and email = :email2";
-            // } 
 
             // Run the conditional query
             $data = $DB->write($query, $arr);

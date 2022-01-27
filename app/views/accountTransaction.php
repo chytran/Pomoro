@@ -36,7 +36,6 @@
                     <option value>-- --</option>
                     <option class="text-xs" value="withdraw">Withdraw</option>
                     <option class="text-xs" value="deposit">Deposit</option>
-                    <option class="text-xs" value="gay">GAYYYY</option> 
                 </select>
                 <!-- How much -->
                 <div id="amountChange" class="w-4/5 text-center flex">
