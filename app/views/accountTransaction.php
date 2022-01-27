@@ -18,8 +18,8 @@
             <div class="form__center flex flex-col items-start justify-center h-4/5 w-4/5">
                 <form method="POST" class="w-full flex flex-col gap-7 justify-center items-center">
                     <!-- Which card -->
-                    <div class="which__card__container w-3/5 flex flex-row">
-                        <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-full font-medium -ml-4 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs pt-1" required>SELECT CARD</span>
+                    <div class="which__card__container w-4/6 text-center flex mr-3">
+                        <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-full font-medium -ml-4 text-sm sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs pt-1" required>SELECT CARD:</span>
                         <select required name="creditCardChange" id="creditCardSelect" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none pb-2" select>
                             <option value>-- --</option>
                             <?php if(is_array($data['cards'])): ?>
@@ -29,13 +29,13 @@
                             <?php endif; ?>
                         </select>
                     </div>
-                    <div id="email" class="w-3/5 text-center flex ">
-                        <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-1/6 font-medium -ml-4 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs pt-1" required>CONFIRM EMAIL</span>
-                        <input name="email2" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none pb-2" required>
+                    <div id="email" class="w-4/6 text-center flex mr-3">
+                        <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-full font-medium -ml-4 text-sm sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs pt-1" required>CONFIRM EMAIL:</span>
+                        <input name="email2" type="text" class="pl-8 bg-transparent border-b-2 cursor-pointer w-full outline-none pb-2" required>
                     </div>
                     <!-- Deposit or Withdraw  -->
-                    <div class="deposit__withdraw__container w-full flex flex-row">
-                    <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-1/6 font-medium -ml-4 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs pt-1" required>TRANSACTION TYPE</span>
+                    <div class="deposit__withdraw__container w-4/6 text-center flex mr-3">
+                        <span style="font-family: Poppins, sans-serif;" class="border-b-2 w-full cursor-pointer text-sm font-medium -ml-4 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-1/6 lg:-ml-1 lg:text-xs pt-1" required>TRANSACTION TYPE:</span>
                         <select required name="depositOrWithdraw" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none pb-2" select>
                             <option value>-- --</option>
                             <option class="text-xs" value="withdraw">Withdraw</option>
@@ -44,9 +44,9 @@
                     </div>
                     
                     <!-- How much -->
-                    <div id="amountChange" class="w-3/5 text-center flex">
-                        <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-1/6 font-medium sm:ml-2 sm:text-xs sm:w-4/6 md:text-sm md:w-3/6 md:-ml-2 lg:w-2/6 lg:-ml-3 lg:text-xs">Amount: </span>
-                        <input required name="amountChange" type="text" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
+                    <div id="amountChange" class="w-4/6 text-center flex mr-3">
+                        <span style="font-family: Poppins, sans-serif;" class="-ml-4 border-b-2 cursor-pointer w-full font-medium sm:ml-2 text-sm sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-2/6 lg:-ml-12 lg:text-xs">AMOUNT: </span>
+                        <input required name="amountChange" type="text" class="pl-8 bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
                     </div>
                     <!-- Submit -->
                     <div id="button-container-login" class="w-4/5 text-center -mt-4">
