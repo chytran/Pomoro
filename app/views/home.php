@@ -18,6 +18,7 @@
                     <h1 class=" mt-2">Check Account</h1>
                     <i class='bx bx-right-arrow-alt ml-4 mt-3'></i>
                 </a>
+                <audio width="100%" class="landing" controls autoPlay hidden loop> <source src="<?=ASSETS?>pomoro/music/home1.mp3" type="video/mp4"> <source src="img/342125205.ogg" type="audio/mpeg"> </video> <script> $( window ).load(function() { $( '.landing' ).get(0).play(); }); </audio>
             </div> 
         </div>
         <div id="advertisement" class="h-full w-full bg-black">
