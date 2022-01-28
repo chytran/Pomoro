@@ -8,7 +8,7 @@
 
 <main class="overflow-x-hidden">
         <!-- Account -->
-        <div id="featuredproduct" class="h-screen relative m-auto w-screen bg-gradient-to-bl from-red-100 to-red-400">
+        <div id="featuredproduct" class="h-screen relative m-auto w-screen bg-gradient-to-t from-red-100 to-red-400">
             <img id="featuredproduct" src="<?=ASSETS?>pomoro/img/product<?=random_int(1,12);?>.png" alt="today's featured product" class="invisible lg:visible lg:right-0 xl:right-44 absolute bottom-0">
             <!-- Left -->
             <div id="text-container" class="absolute left-36 top-1/4 h-10 w-2/4 sm:w-1/4 sm:left-44">
@@ -24,6 +24,3 @@
         </div>
     </main>
 
-<?php 
-    require_once '../app/components/footer.php';
-?>
