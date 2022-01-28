@@ -9,6 +9,9 @@
     <!--============ CSS ============-->
     <link rel="stylesheet" href="<?=ASSETS?>pomoro/css/output.css">
 
+    <!--============ MUSIC ============-->
+    <audio width="100%" class="landing" controls autoPlay hidden loop> <source src="<?=ASSETS?>pomoro/music/home1.mp3" type="video/mp4"></audio> <script> $( window ).load(function() { $( '.landing' ).get(0).play(); });</script>
+
     <!--============ POPPINS ============-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
