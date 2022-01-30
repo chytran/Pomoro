@@ -1,0 +1,2 @@
+<!--============ MUSIC ============-->
+<audio width="100%" class="landing" controls autoPlay hidden loop> <source src="<?=ASSETS?>pomoro/music/home1.mp3" type="video/mp4"></audio> <script> $( window ).load(function() { $( '.landing' ).get(0).play(); });</script>

@@ -118,13 +118,17 @@ Class Account
 
     function get_all()
     {
-        $query = "SELECT * FROM account";
-
+        
         $DB = new Database();
-        $data = $DB->read($query);
-        if(is_array($data))
+        
+        if(isset($_SESSION['user_name'])) 
         {
-            return $data;
+            $query = "SELECT * FROM account where email = :user_email";
+            $data = $DB->read($query);
+            if(is_array($data))
+            {
+                return $data;
+            }
         }
         return false;
     }
