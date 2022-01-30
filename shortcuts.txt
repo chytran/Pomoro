@@ -12,3 +12,7 @@
         </div>
     <?php endforeach;?>
 <?php endif; ?>
+
+/*==================== Go to Typescript folder ========================*/
+-cd public/assets/pomoro/javascript
+-tsc "file"
