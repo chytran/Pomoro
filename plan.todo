@@ -1,8 +1,16 @@
 --- Matthew Razo --- 1/23/2021
 display history results
+    - remove the word 'amount', show +/- for #'s
+    - Display text to description
+    - Fix UI for date
+    - Account Transfer amount (
+        == account #1(logged in) -> account #2 (email)
+        == how much money
+        == submit
 fix login structure
 
 --- Kevin Tran --- 1/27/2021
+Laravel Transfer
 Gateway page
 
 --- Nick --- 1/27/2021

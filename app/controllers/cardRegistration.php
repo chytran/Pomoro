@@ -10,7 +10,7 @@ Class CardRegistration extends Controller
         {
             $user = $this->loadModel("account");
             $userTime = new Account;
-            $userTime->historyPush($_POST);
+            $result = $userTime->historyPush($_POST);
             $userTime->registerCard($_POST);
             
         }

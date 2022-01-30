@@ -13,10 +13,10 @@ class Transaction extends Controller
         // Data for cards
         $data['cards'] = $result;
         
-
-
+        
         if(isset($_POST['depositOrWithdraw'])) {
             $depOrWithTime = new Account;
+            // History code
             $depOrWithTime->depositOrWithdraw($_POST);
         }
         
