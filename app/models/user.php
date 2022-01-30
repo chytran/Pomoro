@@ -18,8 +18,9 @@ Class User
             if(is_array($data)) 
             {
                 // logged in
-                $_SESSION['user_name'] = $data[0]->username;
+                $_SESSION['user_name1'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
+                $_SESSION['email'] = $data[0]->email;
 
                 header("Location:" . ROOT . "home");
                 die;
@@ -75,6 +76,7 @@ Class User
                 $_SESSION['user_id'] = $data[0]->userid;
                 $_SESSION['user_name'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
+                $_SESSION['email'] = $data[0]->email;
 
                 return true;
             }
@@ -87,8 +89,9 @@ Class User
     function logout()
     {
         // logged out
-        unset($_SESSION['user_name']);
+        unset($_SESSION['user_name1']);
         unset($_SESSION['url_url']);
+        unset($_SESSION['email']);
 
         // header("location:" . ROOT . "signout");
         // exit();

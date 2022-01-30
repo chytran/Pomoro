@@ -42,7 +42,7 @@
                         <!-- Primary Navbar items -->
                         <div class="hidden md:flex items-center space-x-1">
                             <a href="home" style="padding-top:0.3rem;" class="px-2 text-gray-500 border-b-4 border-white hover:border-red-500 hover:text-red-500 font-semibold ">Home</a>
-                            <?php if(isset($_SESSION['user_name'])): ?>
+                            <?php if(isset($_SESSION['user_name1'])): ?>
                                 <a href="cardRegistration" style="padding-top:0.3rem;" class="px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Register New Card</a>
                                 <a href="account" style="padding-top:0.3rem;" class="px-2 text-gray-500 font-semibold border-b-4 border-white hover:border-red-500 hover:text-red-500 transition duration-300">Account</a>
                             <?php else: ?>
@@ -53,14 +53,14 @@
                     </div>
                     <!-- Secondary Navbar items -->
                     <div class="hidden md:flex items-center space-x-3 ">
-                        <?php if(isset($_SESSION['user_name'])): ?>
-                            <h1 class="py-2 px-2 font-medium text-gray-600 rounded transition duration-300">Hello, <?= $_SESSION['user_name'] ?></h1>
+                        <?php if(isset($_SESSION['user_name1'])): ?>
+                            <h1 class="py-2 px-2 font-medium text-gray-600 rounded transition duration-300">Hello, <?= $_SESSION['email'] ?></h1>
                         <?php else: ?>
                             <a href="login" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-redred-500 hover:text-red-500 transition duration-300">Log In</a>
                             <a href="signup" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Sign Up</a>
                         <?php endif; ?>
                             
-                        <?php if(isset($_SESSION['user_name'])): ?>
+                        <?php if(isset($_SESSION['user_name1'])): ?>
                             <a href="signout" class="py-2 px-2 font-medium text-gray-500 bg-redred-500 rounded hover:bg-red-500 transition duration-300">Signout</a>   
                         <?php else: ?>
 
