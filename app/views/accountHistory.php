@@ -22,7 +22,7 @@
     </div>  
     <div class="md:grid-col-1 lg:relative pt-2 divide-y-2 divide-red-500 invisible lg:visible absolute">
         <div class="justify-center text-center pb-8"> 
-            <span id="Date" class="float-left pl-2">1/4/2022</span>
+            <span id="Date" class="float-left pl-2"><?= $_SESSION['history'] ?></span>
             <span id="Description" style="padding-left: 1.95rem;" class="float-left">Spotify scheduled payment to CRD 49050</span>
             <span id="Balance" class="float-right pr-2 italic">$14,200</span>
             <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$10</span>

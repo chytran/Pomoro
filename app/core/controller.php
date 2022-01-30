@@ -19,7 +19,7 @@ Class Controller
             include "../app/models/" . $model . ".php";
             print_r("");
         }else{
-            include "../app/views/404.php";
+            include "../app/views/error.php";
         }
     }
 }
