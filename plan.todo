@@ -1,4 +1,4 @@
---- Matthew Razo --- 1/23/2021
+--- Matthew Razo --- 1/30/2021
 display history results
     - remove the word 'amount', show +/- for #'s
     - Display text to description
@@ -9,7 +9,7 @@ display history results
         == submit
 fix login structure
 
---- Kevin Tran --- 1/27/2021
+--- Kevin Tran --- 1/30/2021
 Laravel Transfer
 Gateway page
 
