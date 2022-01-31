@@ -7,20 +7,28 @@
 <!-- </header>  -->
 
 <main class="overflow-x-hidden">
-        <!-- Account -->
-        <div id="featuredproduct" class="h-screen relative m-auto w-screen bg-gradient-to-t from-red-100 to-red-400">
-            <img id="featuredproduct" src="<?=ASSETS?>pomoro/img/product<?=random_int(1,12);?>.png" alt="today's featured product" class="invisible lg:visible lg:right-0 xl:right-44 absolute bottom-0">
-            <!-- Left -->
-            <div id="text-container" class="absolute left-36 top-1/4 h-10 w-2/4 sm:w-1/4 sm:left-44">
-                <h1 id="header-product" class="text-white text-3xl md:text-7xl" style="font-family: Poppins, sans-serif;">Shop securely with Pomoro Commerce</h1>
-                <a id="link" class="transition duration-200 ease-in hover:opacity-90 flex flex-row justify-center content-center cursor-pointer bg-white text-black w-48 h-10 mt-10 pl-2 font-semibold rounded-r-3xl" style="font-family:Poppins, sans-serif;">
-                    <h1 class=" mt-2">Shop Now</h1>
-                    <i class='bx bx-right-arrow-alt ml-4 mt-3'></i>
-                </a>
-            </div> 
+        <div id="container" class="h-screen relative m-auto w-screen bg-gradient-to-t from-red-100 to-red-400">
+            <div id="gridsetup" class="grid sm:grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+                <?php if(is_array($data['products'])): ?>
+                    <?php foreach($data['products'] as $row):?>
+                        <div class="rounded-xl justify-center items-start border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">
+                            <h1 style="font-family: poppins, sans-serif; text-indent: 5px;" class="text-black font-semi-bold text-lg"><?=$row->name?></h1>
+                            <img class="object-cover" src="<?=ASSETS?>pomoro/img/product<?=$row->id?>.png" alt="image of <?=$row->name?>"/>
+                            <div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-md " id="price">$<?=$row->price?></div>
+                            <div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-sm " id="description"><?=$row->description?></div>
+                            <div class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-none mt-4 flex justify-center items-center" id="add-cart"><a href="#" class="text-sm">Add to Cart</a></div>
+                        </div>
+                    <?php endforeach;?>
+                <?php endif; ?>
+            </div>
         </div>
+
         <div id="advertisement" class="h-full w-full bg-black">
 
         </div>
     </main>
 
+<script src="<?=ASSETS?>/pomoro/javascript/main.js"></script>
+<?php
+    include_once '../app/components/footer.php';
+?>
