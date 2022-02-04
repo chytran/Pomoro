@@ -7,8 +7,8 @@
 <!-- </header>  -->
 
 <main class="overflow-x-hidden">
-        <div id="container" class="h-screen relative m-auto w-screen bg-gradient-to-t from-red-100 to-red-400">
-            <div id="gridsetup" class="grid sm:grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+        <div id="container" class="mt-12 flex flex-col justify-center items-center h-screen relative w-screen bg-gradient-to-t from-red-100 to-red-400">
+            <div id="gridsetup" style="margin-top: 40rem;" class="w-11/12 grid sm:grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                 <?php if(is_array($data['products'])): ?>
                     <?php foreach($data['products'] as $row):?>
                         <div class="flex flex-col justify-between items-center rounded-xl border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">
