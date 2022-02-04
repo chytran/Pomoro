@@ -11,7 +11,7 @@
             <div id="gridsetup" class="grid sm:grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                 <?php if(is_array($data['products'])): ?>
                     <?php foreach($data['products'] as $row):?>
-                        <div class="flex flex-col justify-center items-center rounded-xl border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">
+                        <div class="flex flex-col justify-between items-center rounded-xl border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">
                             <h1 style="font-family: poppins, sans-serif; text-indent: 5px;" class="text-black font-semi-bold text-lg"><?=$row->name?></h1>
                             <img class="object-cover w-64 h-64" src="<?=ASSETS?>pomoro/img/product<?=$row->id?>.png" alt="image of <?=$row->name?>"/>
                             <div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-md " id="price">$<?=$row->price?></div>
