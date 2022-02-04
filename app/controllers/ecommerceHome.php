@@ -11,8 +11,11 @@ Class EcommerceHome extends Controller
         $product = $this->loadModel("product");
         $productTime = new Product;
         $result = $productTime->getProducts();
+        // $totalCount = $productTime->totalProducts(); // gets total products
 
         $data['products'] = $result;
+        // $data['totalCount'] = $totalCount;
+        // $data['howManyDisplay'] = 8;
 
         $this->view("ecommerceHome", $data);
     }

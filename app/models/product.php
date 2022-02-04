@@ -20,4 +20,10 @@ Class Product
         }
         return false;
     }
+
+    // Get total products function
+    function totalProducts()
+    {
+
+    }
 }
