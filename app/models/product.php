@@ -22,8 +22,12 @@ Class Product
     }
 
     // Get total products function
-    function totalProducts()
+    function getCountOfProducts()
     {
+        $query = "SELECT COUNT(id) FROM product";
 
+        $DB = new Database();
+        $data = $DB->read($query);
+        return intval($data);
     }
 }

@@ -4,18 +4,21 @@ Class EcommerceHome extends Controller
 {
     function index()
     {
-        // $DB = new Database();
-        // $data = $DB->read("SELECT * FROM USERS, CATEGORY, PRODUCT"); // data holds everything from query
         $data['title_page'] = 'Pomoro - Home';
         
+        //fill data['product'] with product info
         $product = $this->loadModel("product");
         $productTime = new Product;
         $result = $productTime->getProducts();
-        // $totalCount = $productTime->totalProducts(); // gets total products
-
         $data['products'] = $result;
-        // $data['totalCount'] = $totalCount;
-        // $data['howManyDisplay'] = 8;
+
+        //allows calling total # of products
+        $numOfProducts = $productTime->getCountOfProducts();
+        $data['numOfProducts'] = $numOfProducts;
+
+        //testing # of products per page and pagination
+        $data['productsPerPage'] = 8;
+        $data['pageOffset'] = 0;
 
         $this->view("ecommerceHome", $data);
     }
