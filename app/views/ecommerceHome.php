@@ -6,7 +6,7 @@
 ?>
 <!-- </header>  -->
 
-<!-- <main class="overflow-hidden hover:overflow-scroll">
+<main class="overflow-hidden hover:overflow-scroll">
     <div id="container" class="mt-12 flex flex-col justify-center items-center relative w-screen bg-gradient-to-t from-red-100 to-red-400">
         <div id="gridsetup" class="my-5 w-11/12 grid sm:grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
             <?php if(is_array($data['products'])) {
@@ -41,7 +41,7 @@
     <div id="advertisement" class="h-full w-full bg-black">
 
     </div>
-</main> -->
+</main>
 
 <script src="<?=ASSETS?>/pomoro/javascript/main.js"></script>
 

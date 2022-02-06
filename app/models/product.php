@@ -36,6 +36,10 @@ Class Product
 
         $DB = new Database();
         $data = $DB->read($query);
-        return intval($data);
+        if(is_array($data))
+        {
+            return $data;
+        }
+        return false;
     }
 }
