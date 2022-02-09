@@ -2,15 +2,26 @@
 
 Class Product
 {
-    // private $id;
-    // private $category;
-    // private $name;
-    // private $description;
-    // private $price;
+    //constant seems to not always make it into functions
+    //const productsPerPage = 4;
+    //also experiencing unique issues with SELECT COUNT queries that do not occur with exact same queries in phpMyAdmin
 
-    function getProducts()
+    function getAllCategories()
     {
-        $query = "SELECT * FROM product";
+        $query = "SELECT * FROM category;";
+        
+        $DB = new Database();
+        $data = $DB->read($query);
+        if(is_array($data))
+        {
+            return $data;
+        }
+        return false;
+    }
+
+    function getAllProducts($page)
+    {
+        $query = "SELECT * FROM product WHERE id BETWEEN " . (1 + ((intval($page) - 1) * 4)) . " AND " . (intval($page) * 4) . ";";
 
         $DB = new Database();
         $data = $DB->read($query);
@@ -21,10 +32,35 @@ Class Product
         return false;
     }
 
-    // Get total products function
-    function getCountOfProducts()
+    function getCategoryProducts($categoryID, $page)
     {
-        $query = "SELECT COUNT(id) FROM product";
+        $query = "SELECT * FROM product WHERE product.category = " . $categoryID . " LIMIT 4;";
+
+        $DB = new Database();
+        $data = $DB->read($query);
+        if(is_array($data))
+        {
+            return $data;
+        }
+        return false;
+    }
+
+    function getCountOfProducts($categoryID)
+    {
+        if($categoryID == 0) {
+            $query = "SELECT COUNT(product.id) FROM product;";
+        } else {
+            $query = "SELECT COUNT(product.id) FROM product WHERE category = " . $categoryID . ";";        
+        }
+        
+        $DB = new Database();
+        $data = $DB->read($query);
+        return intval($data);
+    }
+
+    function getCountOfCategories()
+    {
+        $query = "SELECT COUNT(category.id) FROM category;";
 
         $DB = new Database();
         $data = $DB->read($query);
