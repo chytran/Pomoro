@@ -190,7 +190,7 @@ class BasicWorldDemo {
   
         const anim = new FBXLoader();
         anim.setPath('./resources/zombie/');
-        anim.load('run.fbx', (anim) => {
+        anim.load('walk.fbx', (anim) => {
           const m = new THREE.AnimationMixer(fbx);
           this._mixers.push(m);
           const idle = m.clipAction(anim.animations[0]);
