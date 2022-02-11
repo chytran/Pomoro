@@ -9,14 +9,18 @@ display history results
         == submit
 fix login structure
 
---- Kevin Tran --- 2/6/2021
-Laravel Transfer
-Gateway page
+--- Kevin Tran --- 2/10/2021
+Duplicate login, signin, and signout for ecommerce world 
 
 --- Nick --- 2/6/2021
-Pagination
---Optional: API/GraphQL--
+Shopping cart
 
+Future goals:
+- Get credit cards and shopping cart to interact
+- show history of transaction
+
+/*============== Ideas of how to show recommended item ===============*/
+-click on Link (+1) -> if link > 20 -> from database, grab item with highest clicks.
 
 
 -home.php (1st: Link to account, 2nd: Advertisement,3rd: About,4th: footer)
