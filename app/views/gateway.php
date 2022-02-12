@@ -18,10 +18,53 @@
       top: 50%;
       font-size: 3rem;
     }
+
+    .info {
+        position: absolute;
+        right: 20%;
+        top: 5%;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        display:block;
+        color: #FFF;
+        font-size: 3rem;
+        cursor: pointer;
+        transition: 0.34s;
+        width: 20rem;
+      }
+
+      .info:hover {
+        opacity: 0.5;
+      }
+
+      .info2 {
+        position: absolute;
+        left: 20%;
+        top: 5%;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        display:block;
+        color: #FFF;
+        font-size: 3rem;
+        cursor: pointer;
+        transition: 0.34s;
+        width: 25rem;
+      }
+
+      .info2:hover {
+        opacity: 0.6;
+      }
   </style>
   <body>
     <div id="app"></div>
     <!-- <h1 class="text">This is a test</h1> -->
+
+    <!-- Links -->
+    <a class="info" href="EcommerceHome/0/1">Ecommerce</a> </div>
+    <a class="info2" href="home">Banking System</a>
+
     <script type="module">
       import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
 
