@@ -22,7 +22,7 @@
   <body>
     <div id="app"></div>
     <!-- <h1 class="text">This is a test</h1> -->
-    <script type="module" src="<?=ASSETS?>pomoro/javascript/gateway.js"></script>
+    <script type="module" src="<?=ASSETS?>pomoro/javascript/main2.js"></script>
 
     <!-- <script type="module" src="/MTLLoader.js"></script>
     <script type="module" src="/OBJLoader.js"></script> -->
