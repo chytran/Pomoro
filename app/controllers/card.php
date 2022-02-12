@@ -10,6 +10,10 @@ class Card extends Controller
         $accountTime = new Account;
         $result = $accountTime->get_all();
 
+        // $user = $this->loadModel("user");
+        // $userLogin = new User;
+        // $checkUserLogin = $userLogin->check_logged_in();
+
         $data['posts'] = $result;
         // $array = json_decode(json_encode($data), true);
         // $data = json_decode(json_encode($data), true);

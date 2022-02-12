@@ -65,8 +65,9 @@ Class User
     {
         $DB = new Database();
 
-        $arr['user_url'] = $POST['user_url'];
-        if(isset($_SESSION['user_url'])) 
+        // $arr['user_url'] = $POST['user_url'];
+        
+        if(!isset($_SESSION['user_url'])) 
         {
             $query = "SELECT * FROM users where url_address = :user_url limit 1";
             $data = $DB->read($query,$arr);
