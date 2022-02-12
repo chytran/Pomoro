@@ -42,7 +42,7 @@ Class EcommerceHome extends Controller
         $data['productsPerPage'] = 4;
         $data['pageNumber'] = $b;
 
-        $this->view("ecommerce/ecommerceHome", $data);
+        $this->view("ecommerceHome", $data);
     }
 
 }
