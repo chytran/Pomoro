@@ -8,7 +8,7 @@
 
 <main class="overflow-hidden hover:overflow-scroll">
     <div id="container" class="mt-12 flex flex-col justify-center items-center relative w-screen bg-gradient-to-t from-red-100 to-red-400">
-        <div class="bg-red-500 w-full h-9 flex justify-center items-center">
+        <div class="bg-red-500 w-full h-12 flex justify-center items-center">
             <?php if(is_array($data['categories'])) {
                 //link back to show products from all categories; helps with testing out pagination
                 //echo '<div style="font-family: poppins, sans-serif;" class="text-white bg-red-500 hover:bg-red-800 transition w-1/7 duration-200 ease-in cursor-pointer h-full text-center"><a href="../../0/1/">All</a></div>';
@@ -16,7 +16,7 @@
                 //echo '<p> ' . $data['numOfCategories'] . ' ' . $data['numOfProducts'] . '</p>';
                 foreach($data['categories'] as $row) {
                     //echo '<div style="font-family: poppins, sans-serif;" class="text-white bg-red-500 hover:bg-red-800 transition w-1/' . $data['numOfCategories'] . ' duration-200 ease-in cursor-pointer h-full text-center"><a href="../../' . $row->id . '/1/">' . $row->name . '</a></div>';
-                    echo '<div style="font-family: poppins, sans-serif;" class="text-white bg-red-500 hover:bg-red-800 transition w-1/6 duration-200 ease-in cursor-pointer h-full text-center"><a href="../../' . $row->id . '/1/">' . $row->name . '</a></div>';
+                    echo '<div style="font-family: poppins, sans-serif;" class="text-white bg-red-500 hover:bg-red-800 transition w-1/6 duration-200 ease-in cursor-pointer text-center"><a href="../../' . $row->id . '/1/">' . $row->name . '</a></div>';
                 }
             } ?>
         </div>
