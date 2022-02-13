@@ -6,9 +6,13 @@ class Transaction extends Controller
     {
         $data['title_page'] = 'Pomoro - Transaction';
 
+        // Calling the models
         $account = $this->loadModel("account");
+        $history = $this->loadModel("historyModel");
+
         $accountTime = new Account;
         $result = $accountTime->get_all();
+
 
         // Data for cards
         $data['cards'] = $result;
@@ -16,8 +20,11 @@ class Transaction extends Controller
         
         if(isset($_POST['depositOrWithdraw'])) {
             $depOrWithTime = new Account;
-            // History code
+            $historyTime = new historyModel;
+            
+            // Fill history function here
             $depOrWithTime->depositOrWithdraw($_POST);
+            // $historyPush = $historyTime-> //function from historymodel     
         }
         
 

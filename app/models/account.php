@@ -11,14 +11,14 @@ Class Account
         $DB = new Database();
 
         $_SESSION['error'] = "";
-        if(isset($POST['email2']))
+        if(isset($POST['email3']))
         {
             // Array for holding exact values
-            $arr['email2'] = $POST['email2']; // run if value is in array and isset
+            $arr['email3'] = $POST['email3']; // run if value is in array and isset
             $arr['amount'] = 0; // Set account to have 0 initially
             $arr['creditCard'] = $POST['creditCard'];
 
-            $query = "INSERT INTO account (email, amount, creditCard) values (:email2, :amount, :creditCard)";
+            $query = "INSERT INTO account (email, amount, creditCard) values (:email3, :amount, :creditCard)";
             $data = $DB->write($query, $arr);
             if($data) 
             {
@@ -91,14 +91,14 @@ Class Account
         $DB = new Database();
 
         $_SESSION['error'] = "";
-        if(isset($POST['email1']))
+        if(isset($POST['email3']))
         {
             // Array for holding exact values
-            $arr['email2'] = $POST['email1']; // run if value is in array and isset
+            $arr['email3'] = $POST['email3']; // run if value is in array and isset
             $arr['history'] = date("Y-m-d H:i:s");
             $arr['message'] = $POST['email1'] . " has created a new " . $POST['creditCard'] . " card";
 
-            $query = "INSERT INTO history (email, history, message) values (:email2, :history, :message)";
+            $query = "INSERT INTO history (email, history, message) values (:email3, :history, :message)";
             $data = $DB->write($query, $arr);
             if($data) 
             {

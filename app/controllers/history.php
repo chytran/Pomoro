@@ -14,6 +14,7 @@ Class History extends Controller
             $history = $this->loadModel("historyModel");
             $historyLoad = new HistoryModel;
             $historyLoad->history($_POST);
+            $data['history'] = $historyLoad;
         }
 
         $this->view("accounthistory", $data);

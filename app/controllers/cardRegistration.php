@@ -6,7 +6,7 @@ Class CardRegistration extends Controller
     {
         $data['title_page'] = 'Pomoro - Card Registration';
 
-        if(isset($_POST['email2']))
+        if(isset($_POST['email3']))
         {
             $user = $this->loadModel("account");
             $userTime = new Account;

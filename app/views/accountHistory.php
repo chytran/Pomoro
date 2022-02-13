@@ -21,8 +21,7 @@
         <div class="relative invisible">test</div>
     </div>
         <div class="md:grid-col-1 lg:relative pt-2 divide-y-2 divide-red-500 invisible lg:visible absolute">
-        <?= $_SESSION['arrayHolder'] ?>
-        <!--<div class="justify-center text-center pb-8 pt-2 invisible lg:visible lg:relative absolute">
+        <div class="justify-center text-center pb-8 pt-2 invisible lg:visible lg:relative absolute">
             <span id="Date" class="float-left pl-2">2022-01-17 20:53:38</span>
             <span id="Description" style="padding-left: 1.95rem;" class="float-left">Disney+ scheduled payment to CRD 49050</span>
             <span id="Balance" class="float-right pr-2 italic">$14,210</span>

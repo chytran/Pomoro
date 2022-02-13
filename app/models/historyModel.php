@@ -13,37 +13,40 @@ Class HistoryModel
         {
                 // array for holding exact values
             //$arr['history'] = $POST['history']; // run if value is in array and isset
-        /* 
-            **The old query that is functional**
+         
+            
 
-            $query = "SELECT history FROM history";
+            $query = "SELECT * FROM history";
             $data = $DB->read($query);
             if(is_array($data)) 
             {
                 // logged in
-                $_SESSION['history'] = $data[0]->history; */
+                $_SESSION['history'] = $data[0]->history;
+                $_SESSION['message'] = $data[0]->message;
+                $_SESSION['changes'] = $data[0]->changes;
+                $_SESSION['currentAmount'] = $data[0]->currentAmount; 
 
                 // New query that is not functional as of yet. 
                 // trying to create array with stored HTML tags that will display on accountHistory
                 // based on rows within table that have the user's username
-                $currentUser = ($_SESSION['user_name']);
+               /* $currentUser = ($_SESSION['user_name']);
                 $query = "SELECT * FROM history WHERE username = '$currentUser'";
                 $data = $DB->read($query);
                 if(is_array($data)) 
                 {
+                    //set array
+                    $array = array();
+
+                    while($row = mysql_fetch_assoc($query))
+
+                        $array[] = $row;
+
                     // logged in
                     $_SESSION['history'] = $data[0]->history;
                     $_SESSION['message'] = $data[0]->message;
                     $_SESSION['changes'] = $data[0]->changes;
-                    $_SESSION['currentAmount'] = $data[0]->currentAmount;
-    
-                    $_SESSION['arrayHolder'] = 
-                    " <div class="justify-center text-center pb-8"> 
-                    <span id="Date" class="float-left pl-2"><?= $_SESSION[''] ?></span>
-                    <span id="Description" style="padding-left: 1.95rem;" class="float-left"><?= $_SESSION['message'] ?></span>
-                    <span id="Balance" class="float-right pr-2 italic">$<?= $_SESSION['currentAmount'] ?></span>
-                    <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$<?= $_SESSION['changes'] ?></span>
-                      </div>"        
+                    $_SESSION['currentAmount'] = $data[0]->currentAmount;*/
+      
 
             } else {
                 $_SESSION['history'] = 'No history found';
@@ -54,6 +57,53 @@ Class HistoryModel
         
     }
 
+    function amountChange($POST) 
+    {
+        print_r("I am here");
+        print_r("I am an array");
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['depositOrWithdraw']))
+        {
+            // list($creditCardChange, $creditCardID) = explode("_", $_POST['creditCardChange'], 2);
+            
+                // Array for holding exact values
+                $arr['creditCardChange'] = $POST['creditCardChange']; 
+                $arr['email2'] = $POST['email2'];
+                $arr['amountChange'] = $POST['amountChange']; // Set account to have 0 initially
+                // $arr['creditCard'] = $POST['creditCard'];
+
+            // Query Changes based on condition
+            if(($POST['depositOrWithdraw'] == 'withdraw') && ($POST['amountChange'] > 0)) {    
+                // inner join with insert
+                $query = "INSERT INTO historyChange (email, changes, currentAmount) 
+                            SELECT  account.amount FROM account
+                            INNER JOIN historyChange
+                            ON historyChange.email = account.email
+                            values (:email2, -:amountChange, account.amount)
+                            ";
+            } 
+            else if(($POST['depositOrWithdraw'] == 'deposit') && ($POST['amountChange'] > 0)) {
+                $query =  "INSERT INTO historyChange (email, changes, currentAmount) 
+                            SELECT  account.amount FROM account
+                            INNER JOIN historyChange
+                            ON historyChange.email = account.email
+                            values (:email2, :amountChange, account.amount)
+                            ";
+            } 
+
+            // Run the conditional query
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+                header("Location:" . ROOT . "account");
+                die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
     /*function signup($POST)
     {
         // print("I Am here");
