@@ -1,18 +1,19 @@
---- Matthew Razo --- 1/30/2021
+--- Matthew Razo --- 2/13/2021
 display history results
     - remove the word 'amount', show +/- for #'s
     - Display text to description
-    - Fix UI for date
+
+    // Optional //
     - Account Transfer amount (
         == account #1(logged in) -> account #2 (email)
         == how much money
         == submit
-fix login structure
+    -fix login structure
 
---- Kevin Tran --- 2/10/2021
-Duplicate login, signin, and signout for ecommerce world 
+--- Kevin Tran --- 2/13/2021
+Set up login, signup, and registration for both applications
 
---- Nick --- 2/6/2021
+--- Nick --- 2/13/2021
 Shopping cart
 
 Future goals:
