@@ -3,7 +3,7 @@
 Class HistoryModel
 {
 
-    function history($POST)
+    function history()
     {
         $DB = new Database();
 
@@ -16,16 +16,12 @@ Class HistoryModel
          
             
 
-            $query = "SELECT * FROM history";
+            $query = "SELECT * FROM history WHERE email = '" . $_SESSION['email'] . "'";
             $data = $DB->read($query);
             if(is_array($data)) 
             {
                 // logged in
-                $_SESSION['history'] = $data[0]->history;
-                $_SESSION['message'] = $data[0]->message;
-                $_SESSION['changes'] = $data[0]->changes;
-                $_SESSION['currentAmount'] = $data[0]->currentAmount; 
-
+                return $data;
                 // New query that is not functional as of yet. 
                 // trying to create array with stored HTML tags that will display on accountHistory
                 // based on rows within table that have the user's username
