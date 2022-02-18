@@ -1,6 +1,6 @@
 <?php
 
-class HomeMainPage extends Controller
+class homePage2 extends Controller
 {
     function index()
     {

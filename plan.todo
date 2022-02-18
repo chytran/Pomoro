@@ -1,13 +1,20 @@
 --- Matthew Razo --- 2/13/2021
 display history results
-    - remove the word 'amount', show +/- for #'s
-    - Display text to description
 
     // Optional //
     - Account Transfer amount (
         == account #1(logged in) -> account #2 (email)
         == how much money
         == submit
+        ## How to update two rows at the same time mysql
+
+        Solution:
+            -- Getting card 1 that from option list (<option> / <select>)  AND amount
+            -- Getting card 2 that from option list (<option> / <select>)  AND amount
+            -- How much to transfer 
+                -- if (amount > 0) then card 1 amount goes down, card 2 goes up
+                -- if (amount < 0) then card 1 amount goes up, card 2 goes down
+            -- button
     -fix login structure
 
 --- Kevin Tran --- 2/13/2021
@@ -19,6 +26,7 @@ Shopping cart
 Future goals:
 - Get credit cards and shopping cart to interact
 - show history of transaction
+- Banking (dashboard)
 
 /*============== Ideas of how to show recommended item ===============*/
 -click on Link (+1) -> if link > 20 -> from database, grab item with highest clicks.
