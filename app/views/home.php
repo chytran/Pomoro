@@ -14,7 +14,7 @@
             <div id="text-container" class="absolute left-36 top-1/4 h-10 w-2/4 sm:w-1/4 sm:left-44">
                 <h1 id="header-account" class="text-white text-3xl md:text-7xl" style="font-family: Poppins, sans-serif;">The most supported & protected banking system</h1>
                 <p id="description-account" class="text-white opacity-80 text-lg mt-10">Check your current status and amount through your account</p>
-                <a id="link" class="transition duration-200 ease-in hover:opacity-90 flex flex-row justify-center content-center cursor-pointer bg-white text-black w-48 h-10 mt-10 pl-2 font-semibold rounded-r-3xl" style="font-family:Poppins, sans-serif;">
+                <a href="account" id="link" class="transition duration-200 ease-in hover:opacity-90 flex flex-row justify-center content-center cursor-pointer bg-white text-black w-48 h-10 mt-10 pl-2 font-semibold rounded-r-3xl" style="font-family:Poppins, sans-serif;">
                     <h1 class=" mt-2">Check Account</h1>
                     <i class='bx bx-right-arrow-alt ml-4 mt-3'></i>
                 </a>
