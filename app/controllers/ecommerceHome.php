@@ -1,17 +1,19 @@
 <?php
+declare(strict_types = 1); 
 
 Class EcommerceHome extends Controller
 {
     function index($a, $b)
     {
+        try {
         //very sketchy url rewriting attempt before any database calls are made
         if (!is_numeric($a) OR is_null($a)) {
             $a = 0;
-            header("Refresh:0, url=../../0/1/");
+            header("Refresh:0, url=../0/1");
         }
         if (!is_numeric($b) OR ($b < 1) OR (is_null($b))) {
             $b = 1;
-            header("Refresh:0, url=../1/");
+            header("Refresh:0, url=1");
         }
 
         $data['title_page'] = 'Pomoro - Home';
@@ -41,6 +43,18 @@ Class EcommerceHome extends Controller
         //testing # of products per page and page # for pagination... manually changed from constant to 4 in product.php because of errors
         $data['productsPerPage'] = 4;
         $data['pageNumber'] = $b;
+        
+        //attempting to catch missing arguments in url... still no luck
+        } catch (ArgumentCountError $e){
+            $a = 0;
+            $b = 1;
+            if (func_num_args() == 0) {
+                header("Refresh:0, url=../0/1");
+            }
+            if (func_num_args() == 1) {
+                header("Refresh:0, url=1");
+            }
+        }
 
         $this->view("ecommerceHome", $data);
     }
