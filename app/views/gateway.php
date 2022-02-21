@@ -21,24 +21,28 @@
 
     .info {
         position: absolute;
-        right: 20%;
+        right: 45%;
         top: 5%;
         width: 100%;
         text-align: center;
         z-index: 100;
         display:block;
-        color: #FFF;
+        /* color: #FFF; */
+        background: rgb(239 68 68);
         font-size: 3rem;
         cursor: pointer;
         transition: 0.34s;
         width: 20rem;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 5rem;
+        border-top-right-radius: 5rem;
       }
 
       .info:hover {
-        opacity: 0.5;
+        opacity: 0.8;
       }
 
-      .info2 {
+      /* .info2 {
         position: absolute;
         left: 20%;
         top: 5%;
@@ -55,15 +59,16 @@
 
       .info2:hover {
         opacity: 0.6;
-      }
+      } */
   </style>
   <body>
-    <div id="app"></div>
+    <div id="app" ></div>
     <!-- <h1 class="text">This is a test</h1> -->
 
     <!-- Links -->
-    <a class="info" href="EcommerceHome/0/1">Ecommerce</a> </div>
-    <a class="info2" href="home">Banking System</a>
+    <a class="info w-24 h-24 text-black" href="login">
+      <h1 class="text-white p-2"><span class="font-thin">Get</span>  Started</h1>
+    </a>
 
     <script type="module">
       import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';

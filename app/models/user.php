@@ -22,7 +22,7 @@ Class User
                 $_SESSION['user_url'] = $data[0]->url_address;
                 $_SESSION['email'] = $data[0]->email;
 
-                header("Location:" . ROOT . "home");
+                header("Location:" . ROOT . "homepage2");
                 die;
             } else {
                 $_SESSION['error'] = 'Wrong username and password';
