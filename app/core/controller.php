@@ -22,4 +22,15 @@ Class Controller
             include "../app/views/error.php";
         }
     }
+
+    function loadTest($test)
+    {
+        if(file_exists("../app/testing/" . $test . ".php"))
+        {
+            include "../app/testing/" . $test . ".php";
+            print_r("");
+        } else {
+            include "../app/views/error.php";
+        }
+    }
 }
