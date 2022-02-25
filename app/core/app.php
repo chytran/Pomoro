@@ -3,7 +3,7 @@
 class App
 {   
     // url/$controller/$method/params
-    private $controller = "home"; // go to controllers/home.php
+    private $controller = "gateway"; // go to controllers/home.php
     private $method = "index"; // default method
     private $params = []; // store extra params
 
@@ -42,7 +42,7 @@ class App
 
     private function splitURL()
     {
-        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+        $url = isset($_GET['url']) ? $_GET['url'] : 'gateway';
         return explode('/', filter_var(trim($url, "/"), FILTER_SANITIZE_URL));
     }
 }
