@@ -1,9 +1,15 @@
---- Matthew Razo --- 2/13/2021
+/*================================ DEADLINE ================================*/
+
+                                   MARCH 18
+                                   
+/*================================ DEADLINE ================================*/
+
+--- Matthew Razo --- 2/25/2021
 display history results
 
     // Optional //
     - Account Transfer amount (
-        == account #1(logged in) -> account #2 (email)
+        == account #1(logged in) -> account #2 (logged in)
         == how much money
         == submit
         ## How to update two rows at the same time mysql
@@ -12,17 +18,16 @@ display history results
             -- Getting card 1 that from option list (<option> / <select>)  AND amount
             -- Getting card 2 that from option list (<option> / <select>)  AND amount
             -- How much to transfer 
-                -- if (amount > 0) then card 1 amount goes down, card 2 goes up
-                -- if (amount < 0) then card 1 amount goes up, card 2 goes down
+                -- if (amount >= 0) then card 1 amount goes down, card 2 goes up
             -- button
     -fix login structure
 
---- Kevin Tran --- 2/13/2021
+--- Kevin Tran --- 2/25/2021
 Monitoring Both applications
 Creating test function and Class
 Footer design
 
---- Nick --- 2/13/2021
+--- Nick --- 2/25/2021
 Shopping cart
 
 Future goals:
