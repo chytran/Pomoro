@@ -10,7 +10,7 @@
     <div id="container" class="mt-12 flex flex-col justify-center items-center relative w-screen bg-gradient-to-t from-red-100 to-red-400">
 
     </div>
-    <div id="container" class="mt-12 flex flex-col justify-center items-center relative w-screen bg-gradient-to-t from-red-100 to-red-400">
+    <div id="container" class="flex flex-col justify-center items-center relative w-screen bg-gradient-to-t from-red-100 to-red-400">
         <div class="bg-red-500 w-full h-12 flex justify-center items-center">
             <?php if(is_array($data['categories'])) {
                 //link back to show products from all categories; helps with testing out pagination
