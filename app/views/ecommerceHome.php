@@ -19,7 +19,7 @@
                 //echo '<p> ' . $data['numOfCategories'] . ' ' . $data['numOfProducts'] . '</p>';
                 foreach($data['categories'] as $row) {
                     //echo '<div style="font-family: poppins, sans-serif;" class="text-white bg-red-500 hover:bg-red-800 transition w-1/' . $data['numOfCategories'] . ' duration-200 ease-in cursor-pointer h-full text-center"><a href="../../' . $row->id . '/1/">' . $row->name . '</a></div>';
-                    echo '<div style="font-family: poppins, sans-serif;" class="text-white bg-red-500 hover:bg-red-800 transition w-1/6 duration-200 ease-in cursor-pointer text-center"><a href="../' . $row->id . '/1">' . $row->name . '</a></div>';
+                    echo '<div style="font-family: poppins, sans-serif;" class="flex justify-center items-center h-full text-white bg-red-500 hover:bg-red-800 transition w-1/6 duration-200 ease-in cursor-pointer text-center"><a href="../' . $row->id . '/1">' . $row->name . '</a></div>';
                 }
             } ?>
         </div>
