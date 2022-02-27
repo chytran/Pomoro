@@ -4,7 +4,7 @@ Class Cart
 {
     /*xxxxxxxxxxxxxxx needs $POST to insert xxxxxxxxxxxxxxxx*/
     function addToCart($POST) {
-        if(isset($_POST['user_name1']))
+        if(isset($_POST['username']))
         {
             $arr['username'] = $POST['username'];
             $arr['product'] = $POST['product'];        
