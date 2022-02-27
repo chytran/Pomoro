@@ -3,11 +3,22 @@
 Class Cart
 {
     /*xxxxxxxxxxxxxxx needs $POST to insert xxxxxxxxxxxxxxxx*/
-    function addToCart($username, $productID) {
-        $query = "INSERT INTO cart (username, productID) VALUES (" . $username . ", " . $productID . ");";
-        
-        $DB = new Database();
-        $data = $DB->write($query);
+    function addToCart($POST) {
+        if(isset($_POST['user_name1']))
+        {
+            $arr['username'] = $POST['username'];
+            $arr['product'] = $POST['product'];        
+            $query = "INSERT INTO cart (username, productID) VALUES (:username, :product);";
+            
+            $DB = new Database();
+            $data = $DB->write($query, $arr);
+            if($data)
+            {
+                echo 'alert("Product added to cart.");';
+            } else {
+                echo 'alert("Could not add to cart at this time.");';
+            }
+        }
     }
     
     function getCartItems($username) {

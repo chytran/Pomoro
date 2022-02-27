@@ -5,6 +5,14 @@ Class EcommerceHome extends Controller
 {
     function index($a, $b)
     {
+        $data['title_page'] = 'Pomoro - Home';
+
+        $cart = $this->loadModel("cart");
+        $cartTime = new Cart;
+        $cartTime->addToCart($_POST);
+        //echo 'alert(test);';
+        
+
         try {
         //very sketchy url rewriting attempt before any database calls are made
         if (!is_numeric($a) OR is_null($a)) {
@@ -15,8 +23,6 @@ Class EcommerceHome extends Controller
             $b = 1;
             header("Refresh:0, url=1");
         }
-
-        $data['title_page'] = 'Pomoro - Home';
 
         $product = $this->loadModel("product");
         $productTime = new Product;
