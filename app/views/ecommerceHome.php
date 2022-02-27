@@ -35,14 +35,22 @@
             <div id="gridsetup" class="my-5 w-11/12 grid sm:grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                 <?php if(is_array($data['products'])) {
                     foreach($data['products'] as $row) {
-                        if (!is_null($row->id)) {
-                        echo '<div class="flex flex-col justify-between items-center rounded-xl border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">';
-                        echo '<h1 style="font-family: poppins, sans-serif;" class="text-black font-semi-bold text-lg">' . $row->name . '<input name="product" type="hidden" value="' . $row->id . '"><input name="username" type="hidden" value="' . $_SESSION['user_name1'] . '"></h1>';
-                        echo '<img class="object-contain w-64 h-64" src="' . ASSETS . 'pomoro/img/product' . $row->id . '.png" alt="image of <?=$row->name?>"/>';
-                        echo '<div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-md">$' . $row->price . '</div>';
-                        echo '<div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-sm mx-1">' . $row->description . '</div>';
-                        echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-11/12 h-9 rounded-full mt-3 mb-1 flex justify-center items-center">Add to Cart</button>';
-                        echo '</div>';
+                        if (!is_null($row->id) && isset($_SESSION['user_name1'])) {
+                            echo '<div class="flex flex-col justify-between items-center rounded-xl border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">';
+                            echo '<h1 style="font-family: poppins, sans-serif;" class="text-black font-semi-bold text-lg">' . $row->name . '<input name="product" type="hidden" value="' . $row->id . '"><input name="username" type="hidden" value="' . $_SESSION['user_name1'] . '"></h1>';
+                            echo '<img class="object-contain w-64 h-64" src="' . ASSETS . 'pomoro/img/product' . $row->id . '.png" alt="image of <?=$row->name?>"/>';
+                            echo '<div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-md">$' . $row->price . '</div>';
+                            echo '<div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-sm mx-1">' . $row->description . '</div>';
+                            echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-11/12 h-9 rounded-full mt-3 mb-1 flex justify-center items-center">Add to Cart</button>';
+                            echo '</div>';
+                        } else {
+                            echo '<div class="flex flex-col justify-between items-center rounded-xl border-2 border-black bg-red-100 hover:bg-white transition duration-200 ease-in">';
+                            echo '<h1 style="font-family: poppins, sans-serif;" class="text-black font-semi-bold text-lg">' . $row->name . '</h1>';
+                            echo '<img class="object-contain w-64 h-64" src="' . ASSETS . 'pomoro/img/product' . $row->id . '.png" alt="image of <?=$row->name?>"/>';
+                            echo '<div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-md">$' . $row->price . '</div>';
+                            echo '<div style="font-family: poppins, sans-serif;" class="text-black pt-2 text-sm mx-1">' . $row->description . '</div>';
+                            echo '<div class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-11/12 h-9 rounded-full mt-3 mb-1 flex justify-center items-center" type="application/javascript" onclick="signincheck()">Add to Cart</div>';
+                            echo '</div>';
                         }
                     }
                 } ?>
@@ -77,3 +85,9 @@
 <?php
     include_once '../app/components/footer.php';
 ?>
+
+<script type="application/javascript">
+    function signincheck() {
+        alert('You must be signed in to add to your cart');
+    }
+</script>
