@@ -75,9 +75,9 @@
 
     </div>
 
-    <div id="advertisement" class="h-full w-full bg-black">
+    <!-- <div id="advertisement" class="h-full w-full bg-black">
 
-    </div>
+    </div> -->
 </main>
 
 <script src="<?=ASSETS?>/pomoro/javascript/main.js"></script>

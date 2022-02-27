@@ -21,6 +21,7 @@ Class Product
 
     function getAllProducts($page)
     {
+        //4 is the # of products per page
         $query = "SELECT * FROM product WHERE id BETWEEN " . (1 + ((intval($page) - 1) * 4)) . " AND " . (intval($page) * 4) . ";";
 
         $DB = new Database();

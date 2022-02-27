@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 Class EcommerceHome extends Controller
 {
+    //update $b to limit # of pages user can see (currently infinite paging)
     function index($a, $b)
     {
         $data['title_page'] = 'Pomoro - Home';
