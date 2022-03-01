@@ -16,7 +16,7 @@
                         <!-- Copy Item -->
                         <div id="individual-items-container" class="w-full h-3/6">
                             <div id="item" class="w-full flex flex-row justify-between items-center gap-2">
-                                <img src="/dist/img/shoes.jpg" alt="" class="w-24 h-24 ">
+                                <img src="<?=ASSETS?>pomoro/img/shoes.jpg" alt="" class="w-24 h-24 ">
                                 <div id="item-detail-container" class="w-full">
                                     <div id="title-price" class="flex flex-row justify-between items-start">
                                         <h1 class="font-semibold">NikeCourt Air Max Volley</h1>
