@@ -20,4 +20,14 @@
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
 </head>
+<style>
+    *,*::before,*::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>
