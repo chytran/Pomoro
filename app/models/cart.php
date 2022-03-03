@@ -21,8 +21,8 @@ Class Cart
         }
     }
     
-    function getCartItems($username) {
-        $query = "SELECT * FROM cart WHERE username = " . $username .";";
+    function getCartItems() {
+        $query = "SELECT cart.id, cart.username, cart.productID, product.name, product.description, product.price FROM cart, product WHERE cart.username = \"" . $_SESSION['user_name1'] . "\" and cart.productID = product.id;";
         
         $DB = new Database();
         $data = $DB->read($query);
@@ -33,15 +33,30 @@ Class Cart
         return false;
     }
 
-    function deleteFromCart($username, $productID) {
-        $query = "DELETE FROM cart WHERE username = " . $username . " AND productID = " . $productID . ";";
-        
+    function getSubtotal() {
+        $query = "SELECT SUM(product.price) FROM cart, product WHERE cart.username = \"" . $_SESSION['user_name1'] . "\" and cart.productID = product.id;";
+
         $DB = new Database();
-        $data = $DB->write($query);
+        $data = $DB->read($query);
+        if(is_array($data)) {
+            return $data;
+        }
+        return 0.00;
     }
 
-    function emptyCart($username) {
-        $query = "DELETE * FROM cart WHERE username = " . $username . ";";
+    function deleteFromCart($POST) {
+            //$arr['username'] = $POST['username'];
+            //$arr['product'] = $POST['product'];
+            $arr['cartID'] = $POST['cartID'];
+
+            $query = "DELETE FROM cart WHERE cart.id = :cartID;";
+            
+            $DB = new Database();
+            $data = $DB->write($query, $arr);
+    }
+
+    function emptyCart() {
+        $query = "DELETE FROM cart WHERE username = " . $_SESSION['user_name1'] . ";";
         
         $DB = new Database();
         $data = $DB->write($query);

@@ -4,10 +4,17 @@ Class shoppingCart extends Controller
 {
     function index()
     {
-        $DB = new Database();
-        $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
         $data['title_page'] = 'Pomoro - Shopping Cart';
         
+        $cart = $this->loadModel("cart");
+        $cartTime = new Cart;
+        
+        $cartItems = $cartTime->getCartItems();
+        $data['cartItems'] = $cartItems;
+
+        $cartSubtotal = $cartTime->getSubtotal();
+        $data['cartSubtotal'] = $cartSubtotal;
+
         $this->view("shoppingCart", $data);
     }
 
