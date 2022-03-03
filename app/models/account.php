@@ -67,6 +67,12 @@ Class Account
         }
     }
 
+    // Interact with cart
+    function cartInteraction()
+    {
+        
+    }
+
     // function getCard()
     // {
     //     $DB = new Database();
