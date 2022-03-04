@@ -5,8 +5,8 @@
     require_once '../app/components/ecommerceHeader.php';
 ?>
 <body>
-    <div id="main-container" class="mt-12 flex justify-center items-center w-screen h-full bg-gradient-to-t from-red-100 to-red-400">
-        <div id="horizontal-container" class="px-24 py-8 w-full h-full flex flex-col justify-center items-center md:flex-row">
+    <div id="main-container" class="mt-24 pb-10 flex justify-center items-center w-screen h-full bg-gradient-to-t ">
+        <div id="horizontal-container" class="px-24 py-8 w-full h-full flex flex-col justify-center items-center sm:flex-col">
             <!-- 4/6 -->
             <div id="left" class="h-full w-full md:w-4/6 pr-6">
                 <div id="vertical-container-left" class="flex flex-col justify-center items-start">
@@ -16,19 +16,20 @@
                         <?php if ($data['cartItems'] != false) {
                             foreach($data['cartItems'] as $row) {
                                 echo '<form method="POST">';
-                                echo '<div id="individual-items-container" class="w-full h-3/6"><div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
-                                    echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
-                                    echo '<div id="item-detail-container" class="w-full">';
-                                        echo '<div id="title-price" class="flex flex-row justify-between items-start">';
-                                            echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1>$' . $row->price . '</h1>';
+                                    echo '<div id="individual-items-container" class="w-full h-3/6"><div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
+                                        echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
+                                        echo '<div id="item-detail-container" class="w-full">';
+                                            echo '<div id="title-price" class="flex flex-row justify-between items-start">';
+                                                echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1>$' . $row->price . '</h1>';
+                                            echo '</div>';
+                                            echo '<span class="text-black w-1/2">' . $row->description . '</span>';
+                                            echo '<div id="favorite-remove" class="text-black"><input name="cartID" type="hidden" value="' . $row->id . '">';
+                                                echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center">Remove</button>';
+                                            echo '</div>';
                                         echo '</div>';
-                                        echo '<span class="text-black w-1/2">' . $row->description . '</span>';
-                                        echo '<div id="favorite-remove" class="text-black"><input name="cartID" type="hidden" value="' . $row->id . '">';
-                                            echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center">Remove</button>';
-                                        echo '</div>';
-                                    echo '</div>';
-                                echo '</div></div>';
+                                    echo '</div></div>';
                                 echo '</form>';
+                                
                             }
                         } ?>
                         <!-- <div id="individual-items-container" class="w-full h-3/6">

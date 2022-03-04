@@ -4,7 +4,7 @@
                                    
 /*================================ DEADLINE ================================*/
 
---- Matthew Razo --- 2/25/2021
+--- Matthew Razo --- 3/3/2022
 display history results
 
     // Optional //
@@ -22,11 +22,13 @@ display history results
             -- button
     -fix login structure
 
---- Kevin Tran --- 2/27/2021
-Design Checkout/Shopping Cart
+--- Kevin Tran --- 3/3/2022
+adjust shopping cart flex-row/flex-col
+fix footer
 
---- Nick --- 2/27/2021
+--- Nick --- 3/3/2022
 Shopping cart
+Connect shopping cart and banking
 
 Future goals:
 - Get credit cards and shopping cart to interact
