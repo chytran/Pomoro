@@ -70,6 +70,9 @@ Class Account
     // Interact with cart
     function cartInteraction()
     {
+        // get items
+
+        // call function to add to history
         
     }
 
