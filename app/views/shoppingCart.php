@@ -6,7 +6,7 @@
 ?>
 <body>
     <div id="main-container" class="mt-24 pb-10 flex justify-center items-center w-screen h-full bg-gradient-to-t ">
-        <div id="horizontal-container" class="px-24 py-8 w-full h-full flex flex-col justify-center items-center sm:flex-col">
+        <div id="horizontal-container" class="px-24 py-8 w-full h-full flex flex-row justify-center items-center sm:flex-col">
             <!-- 4/6 -->
             <div id="left" class="h-full w-full md:w-4/6 pr-6">
                 <div id="vertical-container-left" class="flex flex-col justify-center items-start">
@@ -27,7 +27,7 @@
                                                 echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center">Remove</button>';
                                             echo '</div>';
                                         echo '</div>';
-                                    echo '</div></div>';
+                                    echo '</div>';
                                 echo '</form>';
                                 
                             }
@@ -87,7 +87,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> <!-- left -->
 
             <!-- 2/6 -->
             <div id="right" class="w-full h-full md:w-2/6">
