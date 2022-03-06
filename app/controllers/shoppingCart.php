@@ -8,6 +8,7 @@ Class shoppingCart extends Controller
         
         $cart = $this->loadModel("cart");
         $cartTime = new Cart;
+        $cartTime->deleteFromCart($_POST);
         
         $cartItems = $cartTime->getCartItems();
         $data['cartItems'] = $cartItems;

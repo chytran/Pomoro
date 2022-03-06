@@ -16,16 +16,17 @@
                         <?php if ($data['cartItems'] != false) {
                             foreach($data['cartItems'] as $row) {
                                 echo '<form method="POST">';
-                                    echo '<div id="individual-items-container" class="w-full h-3/6"><div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
-                                        echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
-                                        echo '<div id="item-detail-container" class="w-full">';
-                                            echo '<div id="title-price" class="flex flex-row justify-between items-start">';
-                                                echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1>$' . $row->price . '</h1>';
-                                            echo '</div>';
-                                            echo '<span class="text-black w-1/2">' . $row->description . '</span>';
-                                            echo '<div id="favorite-remove" class="text-black"><input name="cartID" type="hidden" value="' . $row->id . '">';
-                                                echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center">Remove</button>';
-                                            echo '</div>';
+                                    echo '<div id="individual-items-container" class="w-full h-3/6">';
+                                        echo '<div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
+                                            echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
+                                            echo '<div id="item-detail-container" class="w-full">';
+                                                echo '<div id="title-price" class="flex flex-row justify-between items-start w-1/3">';
+                                                    echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1 class="w-1/2">$' . $row->price . '</h1>';
+                                                echo '</div>';
+                                                echo '<span class="text-black w-1/2">' . $row->description . '</span>';
+                                                echo '<div id="favorite-remove" class="text-black w-1/6">';
+                                                    echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center"><input name="cartID" type="hidden" value="' . $row->id . '">Remove</button>';
+                                                echo '</div>';
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</form>';
@@ -107,7 +108,7 @@
                                     <div id="question-icon" class="pl-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm2-1.645A3.502 3.502 0 0 0 12 6.5a3.501 3.501 0 0 0-3.433 2.813l1.962.393A1.5 1.5 0 1 1 12 11.5a1 1 0 0 0-1 1V14h2v-.645z"/></svg></div>
                                 </div>
                                 <div id="subtotal-right-container" class="w-1/3">
-                                    <div id="subtotal-price" class="">$<?php $data['cartSubtotal'] ?></div>
+                                    <div id="subtotal-price" class="">$<?php echo strval($data['cartSubtotal']); ?></div>
                                 </div>
                                 
                             </div>
