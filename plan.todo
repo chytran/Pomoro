@@ -6,21 +6,7 @@
 
 --- Matthew Razo --- 3/3/2022
 display history results
-
-    // Optional //
-    - Account Transfer amount (
-        == account #1(logged in) -> account #2 (logged in)
-        == how much money
-        == submit
-        ## How to update two rows at the same time mysql
-
-        Solution:
-            -- Getting card 1 that from option list (<option> / <select>)  AND amount
-            -- Getting card 2 that from option list (<option> / <select>)  AND amount
-            -- How much to transfer 
-                -- if (amount >= 0) then card 1 amount goes down, card 2 goes up
-            -- button
-    -fix login structure
+-fix login structure
 
 --- Kevin Tran --- 3/3/2022
 -dashboard

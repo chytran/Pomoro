@@ -118,6 +118,29 @@ Class Account
         }
     }
 
+    // cart history
+    function cartHistory($POST) {
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['purchase']))
+        {
+            // Array for holding exact values
+            $arr['email3'] = $POST['email3']; // run if value is in array and isset
+            $arr['history1'] = date("Y-m-d H:i:s");
+            $arr['message1'] = $POST['email1'] . " has created a new transaction from Pomoro Store";
+
+            $query = "INSERT INTO history (email, history, message) values (:email3, :history1, :message1)";
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
     function get_all()
     {
         

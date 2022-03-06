@@ -29,33 +29,7 @@
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</form>';
-                                echo '<form method="POST">';
-                                    echo '<div id="individual-items-container" class="w-full h-3/6"><div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
-                                        echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
-                                        echo '<div id="item-detail-container" class="w-full">';
-                                            echo '<div id="title-price" class="flex flex-row justify-between items-start">';
-                                                echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1>$' . $row->price . '</h1>';
-                                            echo '</div>';
-                                            echo '<span class="text-black w-1/2">' . $row->description . '</span>';
-                                            echo '<div id="favorite-remove" class="text-black"><input name="cartID" type="hidden" value="' . $row->id . '">';
-                                                echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center">Remove</button>';
-                                            echo '</div>';
-                                        echo '</div>';
-                                    echo '</div>';
-                                echo '</form>';echo '<form method="POST">';
-                                echo '<div id="individual-items-container" class="w-full h-3/6"><div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
-                                    echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
-                                    echo '<div id="item-detail-container" class="w-full">';
-                                        echo '<div id="title-price" class="flex flex-row justify-between items-start">';
-                                            echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1>$' . $row->price . '</h1>';
-                                        echo '</div>';
-                                        echo '<span class="text-black w-1/2">' . $row->description . '</span>';
-                                        echo '<div id="favorite-remove" class="text-black"><input name="cartID" type="hidden" value="' . $row->id . '">';
-                                            echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center">Remove</button>';
-                                        echo '</div>';
-                                    echo '</div>';
-                                echo '</div>';
-                            echo '</form>';
+                                
                                 
                             }
                         } ?>
