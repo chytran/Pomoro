@@ -67,6 +67,39 @@ Class Account
         }
     }
 
+    function fundTransfer($POST)
+    {
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($_SESSION['user_name']))
+        //if(isset($POST['username']) && isset($POST['password'])) 
+        {
+                // array for holding exact values
+            //$arr['history'] = $POST['history']; // run if value is in array and isset
+                $arr['creditCardOne'] = $POST['creditCardOne'];
+                $arr['creditCardTwo'] = $POST['creditCardTwo'];  
+                $arr['amountChange1'] = $POST['amountChange1'];
+            
+
+            $query = "UPDATE account
+                        SET amount = (case when creditCard = :creditCardOne THEN -:amountChange1
+                                            when creditCard = :creditCardTwo THEN +:amountChange1
+                                            END)
+                        WHERE creditCard in (:creditCardOne, :creditCardTwo);";
+                        // :amountChange
+            //$query .=  "UPDATE account SET amount=(amount + :amountChange) WHERE creditCard = :creditCardTwo and email = :email2";
+            $data = $DB->write($query, $arr);
+            if(is_array($data)) 
+            {
+                header("Location:" . ROOT . "accountFundTransfer");
+                die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
     // Interact with cart
     function cartInteraction()
     {

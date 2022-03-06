@@ -4,10 +4,31 @@ class FundTransfer extends Controller
 {
     function index()
     {
-        $DB = new Database();
-        $data = $DB->read("SELECT * FROM USERS"); // data holds everything from query
-        $data['title_page'] = 'Pomoro - Fund Transfer';
+        $data['title_page'] = 'Pomoro - Transaction';
+
+        // Calling the models
+        $account = $this->loadModel("account");
+        $history = $this->loadModel("historyModel");
+
+        $accountTime = new Account;
+        $result = $accountTime->get_all();
+
+
+        // Data for cards
+        $data['cards'] = $result;
         
+        
+        if(isset($_POST['creditCardOne'], $_POST['creditCardTwo'])) {
+            $fundTransferTime = new Account;
+            $historyTime = new historyModel;
+            
+            // Fill history function here
+            $fundTransferTime->fundTransfer($_POST);
+            // $historyPush = $historyTime-> //function from historymodel     
+        }
+        
+
         $this->view("accountFundTransfer", $data);
     }
+    
 }
