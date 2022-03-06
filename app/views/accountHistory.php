@@ -64,37 +64,23 @@
             <span id="Description" style="padding-left: 1.40rem;" class="float-left">Nike</span>
             <span id="Balance" class="float-right pr-2 italic">$14,490</span>
             <span id="Amount" style="padding-right: 3.35rem;" class="float-right">$225</span>  
-        </div> --->
-    </div>
+        </div> 
+    </div>-->
     <div class="relative border-solid border-2 border-black lg:invisible visible lg:absolute"> 
         <span id="Date" style="padding-left: 0.30rem;" class="float-left">Posted</span>
         <div class="relative invisible">test</div>
     </div>  
     <div class="relative pt-1 divide-y-2 divide-red-500 lg:invisible visible lg:absolute">
-        <div class="grid grid-cols-2"> 
-            <div id="Description" style="" class="text-left font-semibold pl-2">Spotify</div>
-            <div id="Amount" style="" class="text-right font-semibold pr-2">$10</div>
-            <div id="Date" class="text-left pl-2 pt-2">1/4/2022</div>
-            <div id="Balance" class="text-right italic pr-2 pt-2">$14,200</div>
-        </div>
-        <div class="grid grid-cols-2"> 
-            <div id="Description" style="" class="text-left font-semibold pl-2">Disney+</div>
-            <div id="Amount" style="" class="text-right font-semibold pr-2">$15</div>
-            <div id="Date" class="text-left pl-2 pt-2">1/2/2022</div>
-            <div id="Balance" class="text-right italic pr-2 pt-2">$14,210</div>
-        </div>
-        <div class="grid grid-cols-2"> 
-            <div id="Description" style="" class="text-left font-semibold pl-2">CVS+</div>
-            <div id="Amount" style="" class="text-right font-semibold pr-2">$55</div>
-            <div id="Date" class="text-left pl-2 pt-2">1/1/2022</div>
-            <div id="Balance" class="text-right italic pr-2 pt-2">$14,265</div>
-        </div>
-        <div class="grid grid-cols-2"> 
-            <div id="Description" style="" class="text-left font-semibold pl-2">Nike</div>
-            <div id="Amount" style="" class="text-right font-semibold pr-2">$225</div>
-            <div id="Date" class="text-left pl-2 pt-2">12/1/2022</div>
-            <div id="Balance" class="text-right italic pr-2 pt-2">$14,490</div>
-        </div>
+        <?php if(is_array($data['history'])): ?>
+                <?php foreach($data['history'] as $row):?>   
+                    <div class="grid grid-cols-2">
+                        <div id="Description" style="" class="text-left font-semibold pl-2"><?=$row->message?></div>
+                        <div id="Amount" style="" class="text-right font-semibold pr-2"><?=$row->changes?></div>
+                        <div id="Date" class="text-left pl-2 pt-2"><?=$row->history?></div>
+                        <div id="Balance" class="text-right italic pr-2 pt-2"><?=$row->currentAmount?></div>
+    </div>
+        <?php endforeach;?>
+            <?php endif; ?>
         <div class="justify-center text-center py-2">End of Transactions</div>
     </div>
 </div>  

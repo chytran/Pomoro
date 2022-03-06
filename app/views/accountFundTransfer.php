@@ -20,23 +20,40 @@ lines (16 sloc)  349 Bytes
             <div id="title-container" class="w-full h-16 flex justify-center items-center">
                 <h1 style="font-family: poppins, sans-serif;" class="text-lg font-bold">Transfers</h1>
             </div>
-            <div id="content-container" class="h-100% w-full flex flex-col justify-center items-center">
+            <form method="POST" id="content-container" class="h-100% w-full flex flex-col justify-center items-center">
                 <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
                     <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">From Account</h1>
-                    <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"></div>
-                    <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">Select an Account</a></div>
+                    <select required name="creditCardOne" id="creditCardSelectOne" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none pb-2" select>
+                            <option value>-- --</option>
+                            <?php if(is_array($data['cards'])): ?>
+                                <?php foreach($data['cards'] as $row):?>
+                                    <option value="<?=$row->creditCard?>"><?=$row->creditCard?> Card</option>          
+                                <?php endforeach;?>
+                            <?php endif; ?>
+                    </select>
                 </div>
                 <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
                     <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">To Account</h1>
-                    <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"></div>
-                    <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">Select an Account</a></div>
+                    <select required name="creditCardTwo" id="creditCardSelectTwo" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none pb-2" select>
+                            <option value>-- --</option>
+                            <?php if(is_array($data['cards'])): ?>
+                                <?php foreach($data['cards'] as $row):?>
+                                    <option value="<?=$row->creditCard?>"><?=$row->creditCard?> Card</option>          
+                                <?php endforeach;?>
+                            <?php endif; ?>
+                    </select>
                 </div>
                 <div class="p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-start bg-red-600">
                     <h1 style="font-family: poppins, sans-serif;" class="text-white font-semi-bold text-lg">Amount</h1>
                     <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount"></div>
-                    <div class="text-white bg-red-400 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-xl mt-4 flex justify-center items-center" id="view-account"><a href="#" class="text-sm">$ Enter Amount</a></div>
+                    <div id="amountChange" class="w-4/6 text-center flex mr-3">
+                        <span style="font-family: Poppins, sans-serif;" class="-ml-4 border-b-2 cursor-pointer w-full font-medium sm:ml-2 sm:pr-20 text-sm sm:text-sm sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-3/6 lg:pr-14 lg:text-sm">AMOUNT: </span>
+                        <input required name="amountChange1" type="text" class="pl-8 bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none"> 
                 </div>
-            </div>
+                <div id="button-container-login" class="w-4/5 text-center -mt-4">
+                        <button id="update" class="w-32 h-10 rounded-3xl bg-red-500 text-white hover:opacity-70 transition duration-200 ease-in cursor-pointer">Confirm</button>
+                    </div>   
+            </form> 
         </div>
     </div>
 </div>  
