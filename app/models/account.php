@@ -22,7 +22,7 @@ Class Account
             $data = $DB->write($query, $arr);
             if($data) 
             {
-                header("Location:" . ROOT . "home");
+                header("Location:" . ROOT . "account");
                 die;
             } else {
                 $_SESSION['error'] = 'Please enter valid information to create an card';
