@@ -15,7 +15,7 @@
 <div id="right" class="w-full sm:w-4/6 md:w-full xl:w-full h-screen  z-10 bg-black">
     <div id="organizer-adjustment" class="bg-white relative z-20 flex flex-col justify-center h-screen w-full">
         <div id="outer-border" class="w-full h-screen bg-red-100 flex flex-col justify-start items-start">
-            <div id="content-container" class="pt-10 h-1/5 w-full grid grid-cols-4 gap-3 justify-center place-items-center border-b-rose-700">
+            <div id="content-container" class="p-4 pt-12 h-1/5 w-full grid grid-cols-2 md:grid-cols-4 gap-3 justify-center place-items-center border-b-rose-700">
                 <?php if(is_array($data['dashboard'])): ?>
                     <?php foreach($data['dashboard'] as $row):?>
                         <div class="hover:opacity-80 transition duration-200 cursor-pointer p-4 w-64 h-44 mt-5 rounded-xl flex flex-col justify-center items-center bg-red-600">
@@ -27,13 +27,17 @@
                     <?php endforeach;?>
                 <?php endif; ?>
             </div>
-            <div id="options-container" class="pt-16 h-2/5 w-full grid grid-cols-2 gap-4 justify-center place-items-center border-b-rose-700">
-                <a href="transaction" id="deposit-withdraw-container" class="rounded-3xl hover:opacity-80 transition duration-200 w-5/6 bg-red-700 h-5/6 flex items-center justify-center">
-                    <h1 class="text-lg font-semibold text-white">Make a Deposit/Withdraw</h1>
-                </a>
-                <a href="fundTransfer" id="fund-transfer-container" class="rounded-3xl hover:opacity-80 transition duration-200 w-5/6 bg-red-700 h-5/6 flex items-center justify-center">
-                    <h1 class="text-lg font-semibold text-white">Make a Fund Transfer</h1>
-                </a>
+            <div id="options-container" class="p-4 pt-24 h-2/5 w-full flex flex-row gap-4 justify-between place-items-center border-b-rose-700">
+                <div id="left" class="w-full md:w-1/2 h-full gap-4 ">
+                    <a href="transaction" id="deposit-withdraw-container" class="rounded-3xl hover:opacity-80 transition duration-200 w-5/6 bg-red-700 h-5/6 flex items-center justify-center">
+                        <h1 class="text-lg font-semibold text-white">Make a Deposit/Withdraw</h1>
+                    </a>
+                    <a href="fundTransfer" id="fund-transfer-container" class="mt-6 rounded-3xl hover:opacity-80 transition duration-200 w-5/6 bg-red-700 h-5/6 flex items-center justify-center">
+                        <h1 class="text-lg font-semibold text-white">Make a Fund Transfer</h1>
+                    </a>
+                </div>
+                
+                <img id="credit-img" src="<?=ASSETS?>pomoro/img/credit.png" alt="credit-hand" class="invisible lg:visible lg:right-0 xl:right-16 absolute bottom-0 ">
             </div>
         </div>
     </div>
