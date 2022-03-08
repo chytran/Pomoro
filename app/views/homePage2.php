@@ -17,7 +17,7 @@
                     <h1  class="text-sm sm:text-lg md:text-2xl lg:text-5xl text-red-600">Pomoro Shop</h1>
                 </a>
                 <!-- Right -->
-                <a href="home" id="bank-home" class="hover:opacity-90 hover:w-4/5 hover:h-4/5 transition duration-200 ease-in w-2/5 h-2/5 sm:w-3/5 sm:h-3/5 bg-white shadow-xl flex items-center justify-center">
+                <a href="dashboard" id="bank-home" class="hover:opacity-90 hover:w-4/5 hover:h-4/5 transition duration-200 ease-in w-2/5 h-2/5 sm:w-3/5 sm:h-3/5 bg-white shadow-xl flex items-center justify-center">
                     <h1 class="text-sm sm:text-lg md:text-2xl lg:text-5xl text-red-600">Pomoro Bank</h1>
                 </a>
             </div> 
