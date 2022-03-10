@@ -14,7 +14,7 @@
 <!-- Right side of account -->
 <div id="right" class="w-full sm:w-4/6 md:w-full xl:w-full h-screen  z-10 bg-black">
     <div id="organizer-adjustment" class="bg-white relative z-20 flex flex-col justify-center h-screen w-full">
-        <div id="outer-border" class="w-full h-screen bg-red-100 flex flex-col justify-start items-start">
+        <div id="outer-border" class="w-full h-screen bg-red-100 flex flex-col justify-between items-start">
             <div id="content-container" class="p-4 pt-12 h-1/5 w-full grid grid-cols-2 md:grid-cols-4 gap-3 justify-center place-items-center border-b-rose-700">
                 <?php if(is_array($data['dashboard'])): ?>
                     <?php foreach($data['dashboard'] as $row):?>
@@ -27,8 +27,8 @@
                     <?php endforeach;?>
                 <?php endif; ?>
             </div>
-            <div id="options-container" class="p-4 pt-24 h-2/5 w-full flex flex-row gap-4 justify-between place-items-center border-b-rose-700">
-                <div id="left" class="w-full md:w-1/2 h-full gap-4 ">
+            <div id="options-container" class="p-4 pt-24 h-screen w-full flex flex-row gap-4 justify-between place-items-center border-b-rose-700">
+                <div id="left" class="w-full md:w-1/2 h-2/5 gap-4 pl-20 md:pl-0">
                     <a href="transaction" id="deposit-withdraw-container" class="rounded-3xl hover:opacity-80 transition duration-200 w-5/6 bg-red-700 h-5/6 flex items-center justify-center">
                         <h1 class="text-lg font-semibold text-white">Make a Deposit/Withdraw</h1>
                     </a>
