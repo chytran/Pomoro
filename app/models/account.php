@@ -22,7 +22,7 @@ Class Account
             $data = $DB->write($query, $arr);
             if($data) 
             {
-                header("Location:" . ROOT . "home");
+                header("Location:" . ROOT . "account");
                 die;
             } else {
                 $_SESSION['error'] = 'Please enter valid information to create an card';
@@ -60,6 +60,39 @@ Class Account
             if($data) 
             {
                 header("Location:" . ROOT . "account");
+                die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
+    function fundTransfer($POST)
+    {
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($_SESSION['user_name']))
+        //if(isset($POST['username']) && isset($POST['password'])) 
+        {
+                // array for holding exact values
+            //$arr['history'] = $POST['history']; // run if value is in array and isset
+                $arr['creditCardOne'] = $POST['creditCardOne'];
+                $arr['creditCardTwo'] = $POST['creditCardTwo'];  
+                $arr['amountChange1'] = $POST['amountChange1'];
+            
+
+            $query = "UPDATE account
+                        SET amount = (case when creditCard = :creditCardOne THEN -:amountChange1
+                                            when creditCard = :creditCardTwo THEN +:amountChange1
+                                            END)
+                        WHERE creditCard in (:creditCardOne, :creditCardTwo);";
+                        // :amountChange
+            //$query .=  "UPDATE account SET amount=(amount + :amountChange) WHERE creditCard = :creditCardTwo and email = :email2";
+            $data = $DB->write($query, $arr);
+            if(is_array($data)) 
+            {
+                header("Location:" . ROOT . "accountFundTransfer");
                 die;
             } else {
                 $_SESSION['error'] = 'Please enter valid information to create an card';
@@ -108,6 +141,29 @@ Class Account
             $arr['message'] = $POST['email1'] . " has created a new " . $POST['creditCard'] . " card";
 
             $query = "INSERT INTO history (email, history, message) values (:email3, :history, :message)";
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
+    // cart history
+    function cartHistory($POST) {
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['purchase']))
+        {
+            // Array for holding exact values
+            $arr['email3'] = $POST['email3']; // run if value is in array and isset
+            $arr['history1'] = date("Y-m-d H:i:s");
+            $arr['message1'] = $POST['email1'] . " has created a new transaction from Pomoro Store";
+
+            $query = "INSERT INTO history (email, history, message) values (:email3, :history1, :message1)";
             $data = $DB->write($query, $arr);
             if($data) 
             {
