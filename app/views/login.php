@@ -26,12 +26,12 @@
                                 <h1 class="text-3xl font-semibold" style="font-family: Poppins, sans-serif;">Login</h1>
                             </div>
                             <div id="username" class="w-4/5 -ml-4 sm:ml-0 text-center flex pt-12">
-                                <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium text-xs sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-4 lg:text-xs">USERNAME</span>
-                                <input name="username" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none">
+                                <span style="font-family: Poppins, sans-serif; padding-top: 5.5px" class="border-b-2 cursor-pointer sm:pt-0 w-2/6 font-medium text-xs sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-4 lg:text-xs">USERNAME</span>
+                                <input style="padding-bottom: 4.2px" name="username" type="text" class="bg-transparent border-b-2 sm:pb-0 pl-4 sm:pl-0 cursor-pointer w-full outline-none">
                             </div>
                             <div id="password" class="w-4/5 text-center flex pt-6">
-                                <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium -ml-2 sm:-ml-0 text-xs sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-3 lg:text-xs">PASSWORD</span>
-                                <input name="password" type="password" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
+                                <span style="font-family: Poppins, sans-serif; padding-top: 5.5px" class="border-b-2 cursor-pointer sm:pt-0 w-2/6 font-medium -ml-2 sm:-ml-0 text-xs sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-3 lg:text-xs">PASSWORD</span>
+                                <input style="padding-bottom: 4.2px" name="password" type="password" class="bg-transparent border-b-2 sm:pb-0 cursor-pointer pl-4 sm:pl-0 hover:border-b-8 w-full outline-none">
                             </div>
                             <div id="checkbox" class="-mt-6 w-4/5 relative text-left pl-2 mb-5 sm:-ml-4 pt-6">
                                 <input type="radio">
