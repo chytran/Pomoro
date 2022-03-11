@@ -12,8 +12,8 @@
                 <div id="left" class="relative h-full w-full mx-w-xl z-5">
                     <img src="<?=ASSETS?>pomoro/img/left-login.jpg" alt="" id="login-image" class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-2xl rounded-bl-2xl z-5">
                     <div id="login-left-content" class=" relative z-20 flex flex-col items-start text-center  h-4/5 left-20 top-20 w-2/4 sm:w-2/4">
-                        <h1 class="text-white text-6xl font-semibold sm:text-6xl sm:-ml-10 md:-ml-6 lg:text-6xl lg:-ml-0" style="font-family: poppins, sans-serif;">Hello</h1>
-                        <h1 class="text-white text-7xl font-semibold sm:text-6xl sm:-ml-10 md:-ml-6 lg:text-7xl lg:-ml-0" style="font-family: poppins, sans-serif;">World.</h1>
+                        <h1 class="text-white -ml-5 text-4xl font-semibold sm:text-6xl sm:-ml-10 md:-ml-6 lg:text-6xl lg:-ml-0" style="font-family: poppins, sans-serif;">Hello</h1>
+                        <h1 class="text-white -ml-5 text-5xl font-semibold sm:text-6xl sm:-ml-10 md:-ml-6 lg:text-7xl lg:-ml-0" style="font-family: poppins, sans-serif;">World.</h1>
                         <span class="text-white opacity-90 text-left mt-3 sm:w-full sm:-ml-4 lg:-ml-0">Lorem Ipsum dolor sit amet, consec tetur dipisicing</span>
                     </div> 
                 </div>
@@ -25,12 +25,12 @@
                             <div id="login-title-container" class="w-4/5 text-left -mb-4 pl-3 sm:-ml-4">
                                 <h1 class="text-3xl font-semibold" style="font-family: Poppins, sans-serif;">Login</h1>
                             </div>
-                            <div id="username" class="w-4/5 text-center flex pt-12">
-                                <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-4 lg:text-xs">USERNAME</span>
+                            <div id="username" class="w-4/5 -ml-4 sm:ml-0 text-center flex pt-12">
+                                <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium text-xs sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-4 lg:text-xs">USERNAME</span>
                                 <input name="username" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none">
                             </div>
                             <div id="password" class="w-4/5 text-center flex pt-6">
-                                <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium -ml-2 sm:-ml-0 sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-3 lg:text-xs">PASSWORD</span>
+                                <span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-2/6 font-medium -ml-2 sm:-ml-0 text-xs sm:text-xs sm:w-4/6 md:text-sm md:w-2/6 lg:w-2/6 lg:-ml-3 lg:text-xs">PASSWORD</span>
                                 <input name="password" type="password" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none">
                             </div>
                             <div id="checkbox" class="-mt-6 w-4/5 relative text-left pl-2 mb-5 sm:-ml-4 pt-6">
