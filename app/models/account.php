@@ -67,6 +67,31 @@ Class Account
         }
     }
 
+    function checkout($POST) {
+
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+
+        if(isset($POST['purchase'])) {
+            $arr['creditCardChange2'] = $POST['creditCardChange2']; // from shopping cart
+            $arr['email4'] = $POST['email4']; // confirm email to max the account
+            $arr['amountChange2'] = $POST['amountChange2'];
+
+            $query = "UPDATE account SET amount=(amount - :amountChange2) WHERE creditCard = :creditCardChange2 and email = :email4";
+        
+            // Run the conditional query
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+                header("Location:" . ROOT . "ecommercehome");
+                die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
     function fundTransfer($POST)
     {
         $DB = new Database();

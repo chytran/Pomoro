@@ -154,6 +154,7 @@
                             <div id="total-container-right" class="w-1/3">
                                 <h1 class="">$<?php $orderTotal = $subtotal + $shipping; $_SESSION['orderTotal']  = $orderTotal; echo $_SESSION['orderTotal'];?></h1>
                             </div>
+                            <input type="hidden" value="<? $_SESSION['orderTotal']; ?>">
                         </div> <!-- total-container end -->
 
                         <div id="checkout-paypal" class="w-5/6 h-full pt-8">
