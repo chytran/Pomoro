@@ -8,7 +8,7 @@
     <div id="main-container" class="mt-24 pb-10 flex justify-center items-center w-screen h-full bg-gradient-to-t ">
         <div id="horizontal-container" class="px-24 py-8 w-full h-full flex flex-col justify-center items-center md:flex-row">
             <!-- 4/6 -->
-            <div id="left" class="h-full w-full md:w-4/6 pr-6">
+            <div id="left" class="h-full w-full md:w-1/3 pr-6">
                 <div id="vertical-container-left" class="flex flex-col justify-center items-start">
                     <div id="items-container" class="w-full flex flex-col justify-start items-start">
                         <h1 class="text-2xl font-bold"><?php echo $_SESSION['user_name1'] ?>'s Cart</h1>
@@ -19,23 +19,17 @@
                             $cartEmpty = 0;
                             if ($data['cartItems'] != false) {
                                 foreach($data['cartItems'] as $row) {
-                                    echo '<form method="POST">';
                                         echo '<div id="individual-items-container" class="w-full h-3/6">';
                                             echo '<div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
                                                 echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
                                                 echo '<div id="item-detail-container" class="w-full">';
-                                                    echo '<div id="title-price" class="flex flex-row justify-between items-start w-1/3">';
+                                                    echo '<div id="title-price" class="flex flex-row justify-between items-start w-3/4">';
                                                         echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1 class="w-1/2">$' . $row->price . '</h1>';
                                                         $subtotal += floatval($row->price);
                                                         $numItems += 1;
                                                     echo '</div>';
-                                                    echo '<span class="text-black w-1/2">' . $row->description . '</span>';
-                                                    echo '<div id="favorite-remove" class="text-black w-1/6">';
-                                                        echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center"><input name="cartID" type="hidden" value="' . $row->id . '">Remove</button>';
-                                                    echo '</div>';
                                             echo '</div>';
-                                        echo '</div>';
-                                    echo '</form>';                               
+                                        echo '</div>';                            
                                 }
                             } else {
                                 $cartEmpty = 1;
@@ -97,71 +91,51 @@
 
                     </div>
                     <!-- dynamically display empty cart button -->
-                    <?php if ($cartEmpty == 0) {
-                        echo '<div class="mt-8">';
-                            echo '<form method="POST">';
-                                echo '<button class="text-white h-16 bg-black rounded-full px-5"><input name="cartID" type="hidden" value="a">Empty Cart</button>';
-                            echo '</form>';
-                        echo '</div>';
-                    } ?>
+                    <div class="mt-8">
+                        <a href="shoppingCart"><button class="text-white h-8 bg-black rounded-full px-5"><input name="cartID" type="hidden" value="a">Edit Cart</button></a>
+                    </div>
                 </div>
             </div> <!-- left -->
 
             <!-- 2/6 -->
-            <div id="right" class="w-full h-full mt-10 md:mt-0 md:w-2/6">
+            <div id="right" class="w-full h-full mt-10 md:mt-0 md:w-2/3">
                 <div id="vertical-container-right-setup" class="w-full h-full">
-                    <div id="vertical-container-right" class="flex flex-col justify-start items-start">
-                        <h1 class="text-2xl font-bold">Summary</h1>
-                        <div id="cost-container" class="w-5/6 border-b-2 pt-2 pb-5">
-                            <div id="promo-code" class="w-full flex flex-row justify-start items-start text-black font-semibold gap-2 pt-2">
-                                <h2 class="">Do you have a Promo Code?</h2>
-                                <div id="arrow-down-icon" class=""></div>
-                                <div id="question-icon" class="pt-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm2-1.645A3.502 3.502 0 0 0 12 6.5a3.501 3.501 0 0 0-3.433 2.813l1.962.393A1.5 1.5 0 1 1 12 11.5a1 1 0 0 0-1 1V14h2v-.645z"/></svg></div>
-                            </div>
-                            <div id="subtotal-container" class="flex flex-row justify-start items-start pt-3">
-                                <div id="subtotal-left-container" class="w-2/3 flex flex-row justify-start items-center">
-                                    <h3 class="text-black font-medium">Subtotal</h3>
-                                    <div id="question-icon" class="pl-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm2-1.645A3.502 3.502 0 0 0 12 6.5a3.501 3.501 0 0 0-3.433 2.813l1.962.393A1.5 1.5 0 1 1 12 11.5a1 1 0 0 0-1 1V14h2v-.645z"/></svg></div>
-                                </div>
-                                <div id="subtotal-right-container" class="w-1/3">
-                                    <div id="subtotal-price" class="">$<?php echo $subtotal; ?></div>
+                    <form method="POST">
+                        <div id="vertical-container-right" class="flex flex-col justify-start items-start">
+                            <h1 class="text-2xl font-bold">Payment</h1>
+                            <div id="total-container" class="flex flex-row justify-start items-start pt-4 w-5/6 border-b-2 pb-4">
+                                <div id="total-container-left" class="w-2/3">
+                                    <h1 class="font-bold text-black">Total (after Shipping and Tax)</h1>
                                 </div>
                                 
-                            </div>
-                            <div id="estimate-shipping-container" class="flex flex-row justify-start items-start pt-3">
-                                <div id="estimate-shipping-left-container" class="w-2/3 flex flex-row justify-start items-center">
-                                    <h3 class="text-black font-medium">Estimated Shipping & Handling</h3>
+                                <div id="total-container-right" class="w-1/3">
+                                    <h1 class="">$<?php echo $_SESSION['orderTotal'];?></h1>
                                 </div>
-                                <div id="subtotal-right-container" class="w-1/3">
-                                    <div id="estimate-shipping-price" class="">$<?php try{$shipping = $numItems * 2; echo $shipping;} catch(Exception $e) { echo 0.00; } ?></div>
-                                </div>
-                            </div>
-                            <div id="estimate-tax-container" class="flex flex-row justify-start items-start pt-3">
-                                <div id="estimate-tax-left-container" class="w-2/3 flex flex-row justify-start items-center">
-                                    <h3 class="text-black font-medium">Estimated Tax</h3>
-                                    <div id="question-icon" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm2-1.645A3.502 3.502 0 0 0 12 6.5a3.501 3.501 0 0 0-3.433 2.813l1.962.393A1.5 1.5 0 1 1 12 11.5a1 1 0 0 0-1 1V14h2v-.645z"/></svg></div>
-                                </div>
-                                <div id="estimate-tax-right-container" class="w-1/3">
-                                    <h1 class="">--</h1>
-                                </div>
-                            </div>
-                        </div> <!-- cost container end -->
-                        <div id="total-container" class="flex flex-row justify-start items-start pt-4 w-5/6 border-b-2 pb-4">
-                            <div id="total-container-left" class="w-2/3">
-                                <h1 class="font-bold text-black">Total</h1>
-                            </div>
-                            
-                            <div id="total-container-right" class="w-1/3">
-                                <h1 class="">$<?php $orderTotal = $subtotal + $shipping; $_SESSION['orderTotal']  = $orderTotal; echo $_SESSION['orderTotal'];?></h1>
-                            </div>
-                            <input type="hidden" value="<? $_SESSION['orderTotal']; ?>">
-                        </div> <!-- total-container end -->
+                            </div> <!-- total-container end -->
+                            <div id="checkout-paypal" class="w-5/6 h-full">
+                                <!-- dynamically display cards, else ask to register card -->
+                                    <?php if(is_array($data['cards'])) {
+                                    echo '<div class="which__card__container w-5/6 flex mr-3 py-5">';
+                                        echo '<span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-full font-medium -ml-4 text-sm sm:text-sm sm:w-4/6 md:text-sm md:w-4/6 md:-ml-2 lg:w-3/6 lg:-ml-1 lg:text-sm pt-1" required>Select Card:</span>';
+                                        echo '<select required name="creditCard" id="creditCardSelect" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none pb-2" select>';
+                                    foreach($data['cards'] as $row) {
+                                        echo '<option value="' . $row->creditCard . '">' . $row->creditCard . ' Card</option>';
+                                        }
+                                        echo '</select>';
+                                    echo '</div>';
+                                    
+                                    echo '<div id="email" class="w-5/6 flex mr-3">';
+                                        echo '<span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-full font-medium -ml-4 text-sm sm:text-sm sm:w-full md:text-sm md:w-5/6 md:-ml-2 lg:w-3/6 lg:-ml-1 lg:text-sm pt-1" required>Confirm Email:</span>';
+                                        echo '<input name="email" type="text" class="bg-transparent border-b-2 cursor-pointer w-full outline-none pb-2" required>';
+                                    echo '</div>';
+                                    echo '<a href=""><button id="checkout-button" class="text-white w-full h-16 bg-black rounded-full">Purchase</button></a>';
 
-                        <div id="checkout-paypal" class="w-5/6 h-full pt-8">
-                            <a href="checkout"><button id="checkout-button" class="text-white w-full h-16 bg-black rounded-full">Purchase</button></a>
-                            <!-- <button id="Paypal-button" class="text-white w-full h-16 bg-gray-200 rounded-full mt-5"><span class="text-blue-800 font-bold">Pay</span><span class="text-blue-500 font-bold">Pal</span></button> -->
-                        </div> <!--check-paypal end-->
-                    </div>
+                                    } else {
+                                        echo '<h1 style="font-family: Poppins, sans-serif;" class="border-b-2 w-full font-medium -ml-4 text-sm sm:text-sm sm:w-4/6 md:text-sm md:w-4/6 md:-ml-2 lg:w-3/6 lg:-ml-1 lg:text-sm pt-1" required>You must register a card to checkout your items.</h1>';
+                                    } ?>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
