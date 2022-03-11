@@ -93,6 +93,7 @@ Class HistoryModel
             $data = $DB->write($query, $arr);
             if($data) 
             {
+                
                 header("Location:" . ROOT . "account");
                 die;
             } else {

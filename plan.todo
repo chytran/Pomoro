@@ -4,18 +4,22 @@
                                    
 /*================================ DEADLINE ================================*/
 
---- Matthew Razo --- 3/3/2022
--display history results
--fix login structure
--Show history of pomoro home transaction
+--- Matthew Razo --- 3/10/2022
+-display history results // sunday
+-Show history of: (GO TO model/account/historypush for example)
+    - deposit / withdraw ("[deposit] [some amount of money] into [which card]);
+       -deposit / withdraw ("[withdraw] [some amount of money] from [which card]);
+    - fund transfer ("Transferred [amount] from [card1] to [card2]");
 
---- Kevin Tran --- 3/3/2022
--adjust dashboard
-Connect shopping cart and banking
+    --OPTIONAL--
+        - checkout ()
 
---- Nick --- 3/3/2022
-Shopping cart
-Connect shopping cart and banking
+--- Kevin Tran --- 3/10/2022
+-Heroku
+
+--- Nick --- 3/10/2022
+Checkout
+Checkout and banking // checkout function and history call
 
 Future goals:
 - Get credit cards and shopping cart to interact

@@ -161,7 +161,7 @@ Class Account
         if(isset($POST['email3']))
         {
             // Array for holding exact values
-            $arr['email3'] = $POST['email3']; // run if value is in array and isset
+            $arr['email3'] = //SESSION['email']  // run if value is in array and isset
             $arr['history'] = date("Y-m-d H:i:s");
             $arr['message'] = $POST['email1'] . " has created a new " . $POST['creditCard'] . " card";
 
@@ -176,8 +176,8 @@ Class Account
         }
     }
 
-    // cart history
-    function cartHistory($POST) {
+    // checkout history
+    function checkoutHistory($POST) {
         $DB = new Database();
 
         $_SESSION['error'] = "";
