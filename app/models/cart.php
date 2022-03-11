@@ -49,16 +49,17 @@ Class Cart
             //$arr['product'] = $POST['product'];
             $arr['cartID'] = $POST['cartID'];
 
-            $query = "DELETE FROM cart WHERE cart.id = :cartID;";
-            
-            $DB = new Database();
-            $data = $DB->write($query, $arr);
-    }
-
-    function emptyCart() {
-        $query = "DELETE FROM cart WHERE username = " . $_SESSION['user_name1'] . ";";
+            if (is_numeric($arr['cartID'])) {
+                $query = "DELETE FROM cart WHERE cart.id = :cartID;";
+                
+                $DB = new Database();
+                $data = $DB->write($query, $arr);
+            }
+            else if ($arr['cartID'] == "a") {
+                $query = "DELETE FROM cart WHERE username = \"" . $_SESSION['user_name1'] . "\";";
         
-        $DB = new Database();
-        $data = $DB->write($query);
+            $DB = new Database();
+            $data = $DB->write($query);
+            }
     }
 }

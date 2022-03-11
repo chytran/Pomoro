@@ -13,25 +13,35 @@
                     <div id="items-container" class="w-full flex flex-col justify-start items-start">
                         <h1 class="text-2xl font-bold"><?php echo $_SESSION['user_name1'] ?>'s Cart</h1>
                         <!-- Copy Item -->
-                        <?php if ($data['cartItems'] != false) {
-                            foreach($data['cartItems'] as $row) {
-                                echo '<form method="POST">';
-                                    echo '<div id="individual-items-container" class="w-full h-3/6">';
-                                        echo '<div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
-                                            echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
-                                            echo '<div id="item-detail-container" class="w-full">';
-                                                echo '<div id="title-price" class="flex flex-row justify-between items-start w-1/3">';
-                                                    echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1 class="w-1/2">$' . $row->price . '</h1>';
-                                                echo '</div>';
-                                                echo '<span class="text-black w-1/2">' . $row->description . '</span>';
-                                                echo '<div id="favorite-remove" class="text-black w-1/6">';
-                                                    echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center"><input name="cartID" type="hidden" value="' . $row->id . '">Remove</button>';
-                                                echo '</div>';
+                        <?php
+                            $subtotal = floatval(0.00);
+                            $numItems = 0; 
+                            $cartEmpty = 0;
+                            if ($data['cartItems'] != false) {
+                                foreach($data['cartItems'] as $row) {
+                                    echo '<form method="POST">';
+                                        echo '<div id="individual-items-container" class="w-full h-3/6">';
+                                            echo '<div id="item" class="w-full flex flex-row justify-between items-center gap-2">';
+                                                echo '<img src="' . ASSETS . 'pomoro/img/product' . $row->productID . '.png" alt="" class="w-24 h-24"';
+                                                echo '<div id="item-detail-container" class="w-full">';
+                                                    echo '<div id="title-price" class="flex flex-row justify-between items-start w-1/3">';
+                                                        echo '<h1 class="font-semibold w-1/2">' . $row->name . '</h1><h1 class="w-1/2">$' . $row->price . '</h1>';
+                                                        $subtotal += floatval($row->price);
+                                                        $numItems += 1;
+                                                    echo '</div>';
+                                                    echo '<span class="text-black w-1/2">' . $row->description . '</span>';
+                                                    echo '<div id="favorite-remove" class="text-black w-1/6">';
+                                                        echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center"><input name="cartID" type="hidden" value="' . $row->id . '">Remove</button>';
+                                                    echo '</div>';
+                                            echo '</div>';
                                         echo '</div>';
-                                    echo '</div>';
-                                echo '</form>';                               
+                                    echo '</form>';                               
+                                }
+                            } else {
+                                $cartEmpty = 1;
+                                echo '<h1 class="font-semibold w-1/2">Your cart is empty.</h1>';
                             }
-                        } ?>
+                        ?>
                         <!-- <div id="individual-items-container" class="w-full h-3/6">
                             <div id="item" class="w-full flex flex-row justify-between items-center gap-2">
                                 <img src="<?=ASSETS?>pomoro/img/shoes.jpg" alt="" class="w-24 h-24 ">
@@ -86,6 +96,14 @@
                         -->
 
                     </div>
+                    <!-- dynamically display empty cart button -->
+                    <?php if ($cartEmpty == 0) {
+                        echo '<div class="mt-8">';
+                            echo '<form method="POST">';
+                                echo '<button class="text-white h-16 bg-black rounded-full px-5"><input name="cartID" type="hidden" value="a">Empty Cart</button>';
+                            echo '</form>';
+                        echo '</div>';
+                    } ?>
                 </div>
             </div> <!-- left -->
 
@@ -106,7 +124,7 @@
                                     <div id="question-icon" class="pl-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm2-1.645A3.502 3.502 0 0 0 12 6.5a3.501 3.501 0 0 0-3.433 2.813l1.962.393A1.5 1.5 0 1 1 12 11.5a1 1 0 0 0-1 1V14h2v-.645z"/></svg></div>
                                 </div>
                                 <div id="subtotal-right-container" class="w-1/3">
-                                    <div id="subtotal-price" class="">$<?php echo strval($data['cartSubtotal']); ?></div>
+                                    <div id="subtotal-price" class="">$<?php echo $subtotal; ?></div>
                                 </div>
                                 
                             </div>
@@ -115,7 +133,7 @@
                                     <h3 class="text-black font-medium">Estimated Shipping & Handling</h3>
                                 </div>
                                 <div id="subtotal-right-container" class="w-1/3">
-                                    <div id="estimate-shipping-price" class="">$</div>
+                                    <div id="estimate-shipping-price" class="">$<?php try{$shipping = $numItems * 2; echo $shipping;} catch(Exception $e) { echo 0.00; } ?></div>
                                 </div>
                             </div>
                             <div id="estimate-tax-container" class="flex flex-row justify-start items-start pt-3">
@@ -134,12 +152,12 @@
                             </div>
                             
                             <div id="total-container-right" class="w-1/3">
-                                <h1 class="">$</h1>
+                                <h1 class="">$<?php $orderTotal = $subtotal + $shipping; $_SESSION['orderTotal']  = $orderTotal; echo $_SESSION['orderTotal'];?></h1>
                             </div>
                         </div> <!-- total-container end -->
 
                         <div id="checkout-paypal" class="w-5/6 h-full pt-8">
-                            <button id="checkout-button" class="text-white w-full h-16 bg-black rounded-full">Purchase</button>
+                            <a href="checkout"><button id="checkout-button" class="text-white w-full h-16 bg-black rounded-full">Purchase</button></a>
                             <!-- <button id="Paypal-button" class="text-white w-full h-16 bg-gray-200 rounded-full mt-5"><span class="text-blue-800 font-bold">Pay</span><span class="text-blue-500 font-bold">Pal</span></button> -->
                         </div> <!--check-paypal end-->
                     </div>
