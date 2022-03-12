@@ -47,22 +47,22 @@ Class Cart
     }
 
     function deleteFromCart($POST) {
-            //$arr['username'] = $POST['username'];
-            //$arr['product'] = $POST['product'];
-            $arr['cartID'] = $POST['cartID'];
+        //$arr['username'] = $POST['username'];
+        //$arr['product'] = $POST['product'];
+        $arr['cartID'] = $POST['cartID'];
 
-            if (is_numeric($arr['cartID'])) {
-                $query = "DELETE FROM cart WHERE cart.id = :cartID AND username = \"" . $_SESSION['user_name1'] .  "\";";
-                
-                $DB = new Database();
-                $data = $DB->write($query, $arr);
-            }
-            else if ($arr['cartID'] == "a") {
-                $query = "DELETE FROM cart WHERE username = \"" . $_SESSION['user_name1'] . "\";";
-        
+        if (is_numeric($arr['cartID'])) {
+            $query = "DELETE FROM cart WHERE cart.id = :cartID AND username = \"" . $_SESSION['user_name1'] .  "\";";
+            
             $DB = new Database();
-            $data = $DB->write($query);
-            }
+            $data = $DB->write($query, $arr);
+        }
+        else if ($arr['cartID'] == "a") {
+            $query = "DELETE FROM cart WHERE username = \"" . $_SESSION['user_name1'] . "\";";
+    
+        $DB = new Database();
+        $data = $DB->write($query);
+        }
     }
 
     function checkout($POST) {
@@ -77,6 +77,14 @@ Class Cart
 
             $DB = new Database();
             $data = $DB->write($query, $arr);
+
+            if($data)
+            {
+                //transaction completes but session is ended(?), so sent back to home page to sign in.
+                header("Location:" . ROOT);
+            } else {
+                $_SESSION['error'] = 'Unable to complete checkout.';
+            }
         }
     }
 }
