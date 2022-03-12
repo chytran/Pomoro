@@ -31,7 +31,7 @@
                                                     echo '</div>';
                                                     echo '<span class="text-black w-1/2">' . $row->description . '</span>';
                                                     echo '<div id="favorite-remove" class="text-black w-1/6">';
-                                                        echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer w-full h-9 rounded-full mx-1 flex justify-center items-center"><input name="cartID" type="hidden" value="' . $row->id . '">Remove</button>';
+                                                        echo '<button class="text-white bg-red-500 hover:bg-red-800 transition duration-200 ease-in cursor-pointer h-9 rounded-full mx-1 px-3 flex justify-center items-center"><input name="cartID" type="hidden" value="' . $row->id . '">Remove</button>';
                                                     echo '</div>';
                                             echo '</div>';
                                         echo '</div>';
@@ -154,7 +154,6 @@
                             <div id="total-container-right" class="w-1/3">
                                 <h1 class="">$<?php $orderTotal = $subtotal + $shipping; $_SESSION['orderTotal']  = $orderTotal; echo $_SESSION['orderTotal'];?></h1>
                             </div>
-                            <input type="hidden" value="<? $_SESSION['orderTotal']; ?>">
                         </div> <!-- total-container end -->
 
                         <div id="checkout-paypal" class="w-5/6 h-full pt-8">

@@ -8,7 +8,10 @@ Class shoppingCart extends Controller
         
         $cart = $this->loadModel("cart");
         $cartTime = new Cart;
-        $cartTime->deleteFromCart($_POST);
+
+        //having deleteFromCart() called before getCartItems() makes the POST request more responsive but throws undefined array key warning for "cartID"
+        //used @ in line below to supress the warning... not too professional but it keeps things rolling along faster for the time being
+        @$cartTime->deleteFromCart($_POST);
         
         $cartItems = $cartTime->getCartItems();
         $data['cartItems'] = $cartItems;
