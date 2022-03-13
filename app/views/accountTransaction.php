@@ -38,8 +38,8 @@
                         <span style="font-family: Poppins, sans-serif; width: 110%;" class="border-b-2 cursor-pointer text-sm font-medium -ml-4 sm:text-sm sm:w-full md:text-sm md:w-5/6 md:-ml-2 lg:w-3/6 lg:-ml-1 lg:text-sm pt-1" required>TRANSACTION TYPE:</span>
                         <select required name="depositOrWithdraw" class="bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none pb-2" select>
                             <option value>-- --</option>
-                            <option class="text-xs" value="withdraw">Withdraw</option>
-                            <option class="text-xs" value="deposit">Deposit</option>
+                            <option id="withdraw" class="text-xs" value="withdraw">Withdraw</option>
+                            <option id="deposit" class="text-xs" value="deposit">Deposit</option>
                         </select>
                     </div>
                     

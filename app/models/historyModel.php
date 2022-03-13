@@ -101,6 +101,35 @@ Class HistoryModel
             }
         }
     }
+
+// update history with deposit
+    function depositFunction($POST) 
+    {
+        print_r("I am here");
+        print_r("I am an array");
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['depositOrWithdraw']))
+        {
+            // Array for holding exact values
+            $arr['email4'] = $_SESSION['email'];
+            $arr['history2'] = date("Y-m-d H:i:s");
+            $arr['message2'] = "A deposit has been made"; // run if value is in array and isset
+            $arr['amount2'] = 0; // Set account to have 0 initially
+            $arr['change2'] = $POST['amountChange'];
+
+            $query = "INSERT INTO history (email, history, message, amount, changes) values (:email4, :history2, :message2, :amount2, :change2)";
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+                header("Location:" . ROOT . "account");
+                die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
     /*function signup($POST)
     {
         // print("I Am here");

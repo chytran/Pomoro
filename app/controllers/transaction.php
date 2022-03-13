@@ -24,6 +24,7 @@ class Transaction extends Controller
             
             // Fill history function here
             $depOrWithTime->depositOrWithdraw($_POST);
+            $historyTime->depositFunction($_POST);
             // $historyPush = $historyTime-> //function from historymodel     
         }
         
