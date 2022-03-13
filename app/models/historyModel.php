@@ -113,18 +113,53 @@ Class HistoryModel
         if(isset($POST['depositOrWithdraw']))
         {
             // Array for holding exact values
-            $arr['email4'] = $_SESSION['email'];
+            $arr['email2'] = $POST['email2'];
             $arr['history2'] = date("Y-m-d H:i:s");
-            $arr['message2'] = "A deposit has been made"; // run if value is in array and isset
+            $arr['message2'] = "A change has been made"; // run if value is in array and isset
             $arr['amount2'] = 0; // Set account to have 0 initially
-            $arr['change2'] = $POST['amountChange'];
+            $arr['amountChange'] = $POST['amountChange'];
 
-            $query = "INSERT INTO history (email, history, message, amount, changes) values (:email4, :history2, :message2, :amount2, :change2)";
+            if(($POST['depositOrWithdraw'] == 'withdraw') && ($POST['amountChange'] > 0)){
+                $arr['message2'] = "The user has withdrew $" . $POST['amountChange'] . " into their " . $POST['creditCardChange']; // run if value is in array and isset
+                $query = "INSERT INTO history (email, history, message, changes, currentAmount) values (:email2, :history2, :message2, -:amountChange, :amount2)";
+            }
+            if(($POST['depositOrWithdraw'] == 'deposit') && ($POST['amountChange'] > 0)){
+                $arr['message2'] = "The user has deposited $" . $POST['amountChange'] . " into their " . $POST['creditCardChange']; // run if value is in array and isset
+                $query = "INSERT INTO history (email, history, message, changes, currentAmount) values (:email2, :history2, :message2, :amountChange, :amount2)";
+            }
             $data = $DB->write($query, $arr);
             if($data) 
             {
-                header("Location:" . ROOT . "account");
-                die;
+                //header("Location:" . ROOT . "account");
+                //die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
+    function depositFunction($POST) 
+    {
+        print_r("I am here");
+        print_r("I am an array");
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['depositOrWithdraw']))
+        {
+            // Array for holding exact values
+            $arr['email5'] = $POST['email5'];
+            $arr['history3'] = date("Y-m-d H:i:s");
+            $arr['message3'] = "A purchase has been made"; // run if value is in array and isset
+            $arr['amount3'] = 0; // Set account to have 0 initially
+            $arr['amountChange2'] = $POST['amountChange'];
+
+            $query = "INSERT INTO history (email, history, message, changes, currentAmount) values (:email5, :history3, :message3, :amountChange2, :amount3)";
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+                //header("Location:" . ROOT . "account");
+                //die;
             } else {
                 $_SESSION['error'] = 'Please enter valid information to create an card';
             }

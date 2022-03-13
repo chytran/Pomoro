@@ -20,9 +20,11 @@ Class checkOut extends Controller
         $history = $this->loadModel("historyModel");
         $historyTime = new historyModel;
         
-        @$cartTime->checkout($_POST);
-        // Call checkout function from account model
         // History display purchase has happened
+
+        
+        // Call checkout function from account model
+        @$cartTime->checkout($_POST);
 
         $this->view("checkout", $data);
     }
