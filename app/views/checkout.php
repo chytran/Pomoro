@@ -73,7 +73,7 @@
                                     
                                     echo '<div id="email" class="w-5/6 flex mr-3">';
                                         echo '<span style="font-family: Poppins, sans-serif;" class="border-b-2 cursor-pointer w-full font-medium -ml-4 text-sm sm:text-sm sm:w-full md:text-sm md:w-5/6 md:-ml-2 lg:w-3/6 lg:-ml-1 lg:text-sm pt-1" required>Confirm Email:</span>';
-                                        echo '<input name="email" type="text" class="bg-slate-300 border-b-2 cursor-pointer w-full pb-2" required>';
+                                        echo '<input name="email5" type="text" class="bg-slate-300 border-b-2 cursor-pointer w-full pb-2" required>';
                                     echo '</div>';
                                     echo '<a href=""><button id="checkout-button" class="text-white w-full h-16 bg-black rounded-full mt-5">Purchase</button></a>';
 

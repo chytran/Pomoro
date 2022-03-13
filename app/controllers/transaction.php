@@ -20,11 +20,11 @@ class Transaction extends Controller
         
         if(isset($_POST['depositOrWithdraw'])) {
             $depOrWithTime = new Account;
-            $historyTime = new historyModel;
+            $historyTime = new HistoryModel;
             
             // Fill history function here
-            $depOrWithTime->depositOrWithdraw($_POST);
             $historyTime->depositFunction($_POST);
+            $depOrWithTime->depositOrWithdraw($_POST);
             // $historyPush = $historyTime-> //function from historymodel     
         }
         
