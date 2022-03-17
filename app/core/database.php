@@ -4,6 +4,16 @@ Class Database
 {
     public function db_connect()
     {
+        // define("DB_TYPE", 'mysql');
+        // define("DB_NAME", 'pomoro');
+        // define("DB_USER", 'root');
+        // define("DB_PASS", '');
+        // define("DB_HOST", 'localhost');
+        // $DB_TYPE = 'mysql';
+        // $DB_NAME = 'u459263179_pomoro';
+        // $DB_USER = 'u459263179_user';
+        // $DB_PASS = 'Kimwipes1@';
+        // $DB_HOST = 'localhost';
         try {
             $string = DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";";
             return $db = new PDO($string, DB_USER, DB_PASS);
