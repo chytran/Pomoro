@@ -23,6 +23,8 @@ class FundTransfer extends Controller
             $historyTime = new historyModel;
             
             // Fill history function here
+            $historyTime->fundTransferWithdraw($_POST);
+            $historyTime->fundTransferDeposit($_POST);
             $fundTransferTime->fundTransfer($_POST);
             // $historyPush = $historyTime-> //function from historymodel     
         }

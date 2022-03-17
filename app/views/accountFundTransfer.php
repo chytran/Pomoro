@@ -49,7 +49,7 @@ lines (16 sloc)  349 Bytes
                     <div style="font-family: poppins, sans-serif;" class="text-white pt-2 text-md " id="amount">
                     </div>
                 
-                <div id="amountChange" class="w-full text-center flex pl-2">
+                <div id="amountChange1" class="w-full text-center flex pl-2">
                     <span style="font-family: Poppins, sans-serif;" class=" border-b-2 cursor-pointer w-full font-medium sm:ml-2 sm:pr-20 text-sm sm:text-sm sm:w-4/6 md:text-sm md:w-2/6 md:-ml-2 lg:w-3/6 lg:pr-6 lg:text-sm">AMOUNT: </span>
                     <input required name="amountChange1" type="text" class="pl-8 bg-transparent border-b-2 cursor-pointer hover:border-b-8 w-full outline-none"> 
                 </div>
