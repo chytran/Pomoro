@@ -68,12 +68,12 @@ Class Cart
     function checkout($POST) {
         //check that $_POST['email'] == $_SESSION['email'] before allowing transaction...
         //double check if it should be $_POST or $POST for line below
-        if ($_POST['email'] == $_SESSION['email']) {
-            $arr['email'] = $POST['email'];
+        if ($_POST['email5'] == $_SESSION['email']) {
+            $arr['email5'] = $POST['email5'];
             $arr['creditCard'] = $POST['creditCard'];
             $arr['orderTotal'] = $_SESSION['orderTotal']; //amountChange
             
-            $query = "UPDATE account SET amount=(amount - :orderTotal) WHERE creditCard = :creditCard AND email = :email; DELETE FROM cart WHERE username = \"". $_SESSION['user_name1'] . "\";"; // update query to add: INSERT INTO history (username, email, message, changes, currentAmount) SELECT account.amount FROM account INNER JOIN";
+            $query = "UPDATE account SET amount=(amount - :orderTotal) WHERE creditCard = :creditCard AND email = :email5; DELETE FROM cart WHERE username = \"". $_SESSION['user_name1'] . "\";"; // update query to add: INSERT INTO history (username, email, message, changes, currentAmount) SELECT account.amount FROM account INNER JOIN";
 
             $DB = new Database();
             $data = $DB->write($query, $arr);
@@ -81,7 +81,7 @@ Class Cart
             if($data)
             {
                 //transaction completes but session is ended(?), so sent back to home page to sign in.
-                header("Location:" . ROOT);
+                header("Location:" . ROOT . "home");
             } else {
                 $_SESSION['error'] = 'Unable to complete checkout.';
             }
