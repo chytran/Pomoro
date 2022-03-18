@@ -14,9 +14,14 @@ Class Database
         // $DB_USER = 'u459263179_user';
         // $DB_PASS = 'Kimwipes1@';
         // $DB_HOST = 'localhost';
+        $DB_TYPE = 'mysql';
+        $DB_NAME = 'pomoro';
+        $DB_USER = 'root';
+        $DB_PASS = '';
+        $DB_HOST = 'localhost';
         try {
-            $string = DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";";
-            return $db = new PDO($string, DB_USER, DB_PASS);
+            $string = $DB_TYPE . ":host=" . $DB_HOST . ";dbname=" . $DB_NAME . ";";
+            return $db = new PDO($string, $DB_USER, $DB_PASS);
             show($db);
         } catch(PDOException $e){
             die($e->getMessage());
