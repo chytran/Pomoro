@@ -137,6 +137,34 @@ Class HistoryModel
         }
     }
 
+    function shoppingCartHistory($POST) 
+    {
+        print_r("I am here");
+        print_r("I am an array");
+        $DB = new Database();
+
+        $_SESSION['error'] = "";
+        if(isset($POST['email5']))
+        {
+            // Array for holding exact values
+            $arr['email5'] = $_SESSION['email'];
+            $arr['history2'] = date("Y-m-d H:i:s");
+            $arr['message5'] = "Pomoro Shopping Purchase"; // run if value is in array and isset
+            $arr['amount2'] = 0; // Set account to have 0 initially
+            $arr['change5'] = $_SESSION['orderTotal'];
+
+            $query =  "INSERT INTO history (email, history, message, currentAmount, changes) values (:email5, :history2, :message5, :amount2, :change5)";
+            $data = $DB->write($query, $arr);
+            if($data) 
+            {
+                //header("Location:" . ROOT . "account");
+                //die;
+            } else {
+                $_SESSION['error'] = 'Please enter valid information to create an card';
+            }
+        }
+    }
+
     function fundTransferWithdraw($POST) 
     {
         print_r("I am here");
