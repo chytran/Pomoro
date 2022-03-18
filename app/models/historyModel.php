@@ -8,7 +8,7 @@ Class HistoryModel
         $DB = new Database();
 
         $_SESSION['error'] = "";
-        if(isset($_SESSION['user_name']))
+        if(isset($_SESSION['user_name1']))
         //if(isset($POST['username']) && isset($POST['password'])) 
         {
                 // array for holding exact values
@@ -45,7 +45,7 @@ Class HistoryModel
       
 
             } else {
-                $_SESSION['history'] = 'No history found';
+                //$_SESSION['history'] = 'No history found';
             }
         } else {
             $_SESSION['error'] = 'Transactions must be found in order to be displayed';
