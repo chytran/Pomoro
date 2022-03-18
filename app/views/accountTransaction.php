@@ -24,7 +24,7 @@
                             <option value>-- --</option>
                             <?php if(is_array($data['cards'])): ?>
                                 <?php foreach($data['cards'] as $row):?>
-                                    <option value="<?=$row->creditCard?>"><?=$row->creditCard?> Card</option>          
+                                    <option value="<?=$row->creditCard?>"><?=$row->creditCard?> Card</option>  
                                 <?php endforeach;?>
                             <?php endif; ?>
                         </select>

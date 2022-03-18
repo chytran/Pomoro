@@ -20,9 +20,9 @@ Class checkOut extends Controller
         $history = $this->loadModel("historyModel");
 
         if(isset($_POST['email5'])) {
-        $historyTime = new historyModel;
+            $historyTime = new historyModel;
 
-        $historyTime->shoppingCartHistory($_POST);
+            $historyTime->shoppingCartHistory($_POST);
         }
         
         // History display purchase has happened

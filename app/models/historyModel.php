@@ -115,7 +115,7 @@ Class HistoryModel
             // Array for holding exact values
             $arr['email4'] = $_SESSION['email'];
             $arr['history2'] = date("Y-m-d H:i:s");
-            $arr['message2'] = "A deposit has been made"; // run if value is in array and isset
+            $arr['message2'] = "A deposit has been made to " . $POST['transactionCard']; // run if value is in array and isset
             $arr['amount2'] = 0; // Set account to have 0 initially
             $arr['change2'] = $POST['amountChange'];
 
